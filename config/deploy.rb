@@ -3,6 +3,9 @@ lock '3.1.0'
 
 set :application, 'lits'
 set :repo_url, 'https://github.com/YuriBuerov/lits'
+set :scm, :git
+set :branch, "master"
+set :deploy_via, :copy
 
 set :deploy_to, '/home/deploy/lits'
 
