@@ -9,6 +9,7 @@ gem 'mysql2', group: :production
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

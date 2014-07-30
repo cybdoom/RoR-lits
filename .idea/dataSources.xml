@@ -20,7 +20,7 @@
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/lits</jdbc-url>
-      <user-name>litsuser</user-name>
+      <user-name>root</user-name>
       <user-password>dfc2dfc0dfe2dfe2dfe0dfe0dfecdfc2dfc0dfdcdfccdf9fdf9cdf92df9ddfc0dfc8</user-password>
       <libraries />
     </data-source>

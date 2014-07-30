@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'lits'
-set :repo_url, 'git@github.com:YuriBuerov/lits.git'
+set :repo_url, 'https://github.com/YuriBuerov/lits'
 
 set :deploy_to, '/home/deploy/lits'
 
