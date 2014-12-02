@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logic IT staff [administration]</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+  <%= csrf_meta_tags %>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="bodywrapper">
+  <div class="row-1">
+    <header>
+      <div class="row-nav">
+        <div class="container ">
+          <div class="sixteen columns">
+            <!-- Logo -->
+            <div class="logo fleft">
+              <a href="/"><img src="/images/logo.png" /></a>
+            </div>
+            <!-- menu -->
+            <nav id = "sf-menu" class="sf-menuwrapper fright">
+              <button class="dl-trigger">Open Menu</button>
+              <ul class="sf-menu">
+                <li><a href="/admin/users">Users</a></li>
+                <li><a href="/admin/services">Services</a></li>
+                <li><a href="/admin/posts">Blog</a></li>
+                <li><a href="/admin/pages">Pages</a></li>
+              </ul>
+            </nav>
+            <!-- end menu -->
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        if($('textarea').length > 0) {
+            var data = $('textarea');
+            $.each(data, function(i) {
+                CKEDITOR.replace(data[i].id);
+            });
+        }
+    });
+</script>
+</body>
+</html>

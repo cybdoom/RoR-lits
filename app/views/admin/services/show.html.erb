@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="two columns">
+    <div class="post-img">
+      <img class="img-border img_wrap1" src="<%= @service.big_image_url %>" alt="">
+    </div>
+  </div>
+  <div class="fourteen columns portfolio-content">
+    <h2 class="headline">
+      <%= @service.title %>
+    </h2>
+    <p>
+      <%= @service.header.html_safe %>
+    </p>
+    <%= @service.body.html_safe %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_admin_service_path(@service) %> |
+<%= link_to 'Back', admin_services_path %>

@@ -1,0 +1,59 @@
+::selection {
+background:#2996c9 !important;
+}
+::-moz-selection {
+background:#2996c9 !important;
+}
+body { background-color: #ffffff !important; }
+a.link-name { color:#2996c9 !important; }
+.shade1 { background-color: #2090c4 !important; }
+.shade2 { background-color: #369fcf !important; }
+.shade3 { background-color: #54aed8 !important; }
+.sub-title { color: #34495E !important; }
+.team-name span {  color: #2996c9 !important; }
+.text-color-red { color: #2996c9 !important; }
+.text-color-red { color: #2996c9 !important; }
+
+.text-color-blue { color: #2996c9 !important; }
+.post-holder .date .month { color: #FFFFFF; }
+.newsletter-button:hover { background: none repeat scroll 0 0 #2996c9 !important; border: 1px solid #AF242C; color: #FFFFFF; }
+.quotes .flex-control-nav li a:hover, .quotes .flex-control-nav li a.active { background: none repeat scroll 0 0 #2996c9 !important; }
+.sf-menu li.active { background: rgba(255, 255, 255, 0.07) !important; margin: -6px 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.sf-menu li:hover, .sf-menu li.current-menu-item, .sf-menu li.sfHover, .sf-menu li.current-menu-parent { background: none repeat scroll 0 0 #ffad01 !important; margin: -6px 0; border-top: 6px solid #ffad01;  border-bottom: 6px solid #ffad01; }
+.sf-menu li:hover a { color: #FFFFFF !important; }
+.sf-menu li .sub-menu li a { color: #fff !important; }
+
+a.moduleItemReadMore:before { background: #2996c9 !important; }
+
+.list-style-1 li a:hover { color: #2996c9 !important; }
+.list-style li a:hover { color: #2996c9 !important; }
+.faq-accordion .qa { color: #2996c9 !important; }
+.faq_list span.marker { color:#2996c9 !important; }
+.price-column-featured h4 { background-color: #2996c9 !important; }
+span.link_post:hover { background-color: #2996c9 !important; }
+span.zoom:hover { background-color: #2996c9 !important; }
+span.video:hover { background-color: #2996c9 !important; }
+
+
+
+
+
+
+
+
+
+
+.post-holder .date { 
+	background-color: #737373 !important;
+	color:#fff !important;
+	text-shadow: 1px -1px 0px #333 !important;
+ }
+
+.button.yellow, input[type="button"] {
+	background-color: #E74C3C !important;
+	color:#fff !important;
+ }
+.button.yellow:hover {background: #1ABC9C !important;}
+
+
+

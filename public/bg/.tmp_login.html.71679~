@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BG ROI</title>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+</head>
+<body>
+<div class="wrapper login">
+	<header>
+		<div class="brand pull-left">
+			<div class="logo">
+				<strong><a href="#">BG ROI</a></strong>
+			</div>
+			<p>PaaS and Outsourcing ROI Calculator <em>Version 1.0</em></p>
+		</div>
+	</header><!-- / header -->
+	<div id="main">
+		<div id="content">
+			<p>PaaS and Outsourcing ROI Calculator</p>
+			<div class="login">
+				<p><input type="text" value="User Name"/></p>
+				<p><input type="text" value="Password"/></p>
+				<button type="button" class="btn btn-success">Success</button>
+			</div>
+		</div><!-- / content -->
+	</div><!-- / main -->
+	<div id="footer">
+	</div><!-- / footer -->
+</div><!-- / wrapper -->
+</body>
+</html>
