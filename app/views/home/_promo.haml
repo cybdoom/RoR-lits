@@ -1,0 +1,22 @@
+.container
+  .ten.columns
+    %video#my_video_1.video-js.vjs-default-skin{:controls => "", "data-setup" => "{}", :height => "360", :poster => "/images/lits1_preview.png", :preload => "auto", :width => "580"}
+      %source{:src => "/video/lits1.mp4", :type => "video/mp4"}
+        / <source src="my_video.webm" type='video/webm'>
+  .six.columns
+    %h4{"data-effect" => "slide-left"} Logic IT Staff is an information technology company operating in the global market with offices in the USA and Eastern Europe.
+    %ul.list-style
+      %li.check-list{"data-effect" => "slide-right"} Full cycle development of games on the Framework Unity for IOS, Android, Flash and Windows 8 platforms
+      %li.check-list{"data-effect" => "slide-right"} Full cycle development of application  for IOS, Android, Flash and Windows 8 platforms
+      %li.check-list{"data-effect" => "slide-right"} Creation of program software using Ruby on Rails, C#, С++, Java, PHP, JavaScript
+  .clear
+.container
+  / Info box
+  .wrapper
+    .columns.sixteen
+      .info-box
+        .info-content
+          %h4 Logic IT Staff offers full cycle service of IT development
+          We join and support your project at any stage or implement your ideas from the very scratch to the successful product.
+        %a.tp-button.medium.orange.fright{:href => "/about"} Read more
+        .clearfix

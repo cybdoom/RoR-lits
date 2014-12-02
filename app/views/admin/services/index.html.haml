@@ -1,0 +1,14 @@
+%h1 Listing services
+= link_to 'Create new service', new_admin_service_path
+%br/
+%br/
+- @services.each do |service|
+  %div
+    .icon-wrap
+      %img{:src => service.image_url}/
+    %h3= service.title
+    %p= service.header
+  = link_to 'Show', [:admin, service]
+  |
+  \#{link_to 'Edit', edit_admin_service_path(service)} |
+  \#{link_to 'Destroy', [:admin, service], method: :delete, data: { confirm: 'Are you sure?' }}

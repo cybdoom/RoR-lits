@@ -1,0 +1,13 @@
+.container
+  %h1 Services:
+.row-6
+  - @services.each do |service|
+    %a.anchor{:name => service.name}
+    .container
+      .two.columns
+        .post-img
+          %img.img_wrap1{:alt => "", :src => service.big_image_url}/
+      .fourteen.columns.portfolio-content
+        %h2.headline
+          = service.title
+        = service.body.html_safe

@@ -1,0 +1,30 @@
+.row-6
+  .container
+    .fright
+      .eleven.columns
+        - @posts.each do |post|
+          .post-border-right
+            %article.post-holder
+              %header
+                .date
+                  %span.day= post.created_at.day
+                  %span.month= post.created_at.strftime("%B")
+                %h1.entry-title.fleft= post.title
+                / <div class="fright"><a class="comments-link" href="#">16</a></div>
+                .clear
+              .wrapper
+                = post.body.html_safe
+    .fleft
+      .five.columns
+        .widget
+          %h4 Previous posts
+          %ul
+            - @latest_posts.each do |post|
+              %li
+                .date
+                  %span.day= post.created_at.day
+                  %span.month= post.created_at.strftime("%B")
+                %a{:href => "/blog?id=#{post.id}"}= post.title
+  .row-6
+    .container
+      = will_paginate @posts

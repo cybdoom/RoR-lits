@@ -1,0 +1,25 @@
+%a.anchor{:name => "services"}
+.row-2
+  .container
+    .wrapper
+      .columns.sixteen
+        .aligncenter
+          .text-1.blue-ft-shadow Our services
+          .text-2
+            %h1{:style => "font-size: 15px; color: white;"} Mainly we specialize in: Ruby on Rails full cycle development and outstaffing
+        .clear
+.row-3
+  .container
+    .wrapper
+      .columns.sixteen
+        - @services.each do |service|
+          .box2{"data-effect" => service.display_mode}
+            %a{:href => "/services##{service.name}"}
+            .box
+              .icon-wrap
+                %img{:src => service.image_url}/
+              %h2= service.title
+              %p= service.header
+        .clear
+  .container
+    %a.tp-button.medium.orange.fright{:href => "/services"} More services

@@ -1,0 +1,14 @@
+%p#notice= notice
+.container
+  .two.columns
+    .post-img
+      %img.img-border.img_wrap1{:alt => "", :src => @service.big_image_url}/
+  .fourteen.columns.portfolio-content
+    %h2.headline
+      = @service.title
+    %p
+      = @service.header.html_safe
+    = @service.body.html_safe
+= link_to 'Edit', edit_admin_service_path(@service)
+|
+\#{link_to 'Back', admin_services_path}

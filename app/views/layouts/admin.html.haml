@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %title Logic IT staff [administration]
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "admin", "data-turbolinks-track" => true
+    = javascript_include_tag 'ckeditor/ckeditor.js'
+    = csrf_meta_tags
+    %link{:href => "/images/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
+  %body
+    .bodywrapper
+      .row-1
+        %header
+          .row-nav
+            .container
+              .sixteen.columns
+                / Logo
+                .logo.fleft
+                  %a{:href => "/"}
+                    %img{:src => "/images/logo.png"}/
+                / menu
+                %nav#sf-menu.sf-menuwrapper.fright
+                  %button.dl-trigger Open Menu
+                  %ul.sf-menu
+                    %li
+                      %a{:href => "/admin/users"} Users
+                    %li
+                      %a{:href => "/admin/services"} Services
+                    %li
+                      %a{:href => "/admin/posts"} Blog
+                    %li
+                      %a{:href => "/admin/pages"} Pages
+                / end menu
+      .container
+        = yield
+    :javascript
+      $(document).ready(function(){
+          if($('textarea').length > 0) {
+              var data = $('textarea');
+              $.each(data, function(i) {
+                  CKEDITOR.replace(data[i].id);
+              });
+          }
+      });

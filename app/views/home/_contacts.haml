@@ -1,0 +1,49 @@
+%a.anchor{:name => "contact"}
+.container
+  .sixteen.columns
+  .five.columns
+    .block-ident-1
+      %h4.headline Find Us
+      %dl
+        %dt.ident-bot-2
+          %strong
+            LITS, Artibus LLC
+            %br/
+            3635 Seaside Dr. #210
+            %br/
+            Key West, FL 33040
+        %dd
+          %span> +1 786 600 1652
+          Telephone:
+        %dd
+          %span> LogicITSolutions
+          Skype:
+        %dd
+          %span>
+            %a.link-1{:href => "#"} office@logic-it-solutions.com
+          E-mail:
+  .eleven.columns
+    %h4.headline Get In Touch
+    / contact form
+    #confirm
+      %form#form1
+        .success Thanks! We will be in touch soon.
+        %fieldset
+          %label.name
+            %input{:type => "text", :value => "Name"}/
+          .empty Please enter your name.
+          %label.email
+            %input{:type => "email", :value => "Email"}/
+          .error This is not a valid email address.
+          .empty Please enter Email Address.
+          %label.phone
+            %input{:type => "text", :value => "Phone"}/
+          .error This is not a valid phone.
+          .empty Please enter phone.
+          %label.message
+            %textarea Message
+          .error The message is too short.
+          .empty Please enter your message.
+          .clear
+          .btns
+            %a.tp-button.medium.orange{"data-type" => "submit", :href => "#"} Send message
