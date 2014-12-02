@@ -6,6 +6,10 @@ gem 'rails', '4.0.3'
 # Use mysql as the database for Active Record
 gem 'mysql2', group: :production
 
+group :development do
+  gem 'quiet_assets'
+end
+
 gem 'paperclip'
 gem 'ckeditor'
 
