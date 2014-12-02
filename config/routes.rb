@@ -39,6 +39,13 @@ Lits::Application.routes.draw do
 
   resources :posts, :only => [:index]
 
+  get 'career' => 'career#index'
+
+  resources :vacancies do
+    post 'apply' => 'vacancy#apply'
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

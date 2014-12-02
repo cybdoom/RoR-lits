@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  career:
+    index:
+      banner:
+        text: 'Work with us, we are awesome'
+      link:
+        text: 'Look for vacancy'
