@@ -1,11 +1,11 @@
 senior_ruby:
   name: "Senior Ruby Developer"
   description: "Some usefull and attractive description"
-  requirenments: ["5 years of expirience using Ruby", "strong self-organization skills", "self-motivated person"]
+  requirements: ["5 years of expirience using Ruby", "strong self-organization skills", "self-motivated person"]
   salary: "2000-4000 $, depends on qualification"
 
 junior_frontend:
   name: "Junior Frontend Developer"
   description: "Other sexy description"
-  requirenments: ["strong self-organization skills", "self-motivated person", "HTML5, CSS3 knowledge", "at least 1 year of experience using JavaScript"]
+  requirements: ["strong self-organization skills", "self-motivated person", "HTML5, CSS3 knowledge", "at least 1 year of experience using JavaScript"]
   salary: "800-1300 $, depends on qualification"
