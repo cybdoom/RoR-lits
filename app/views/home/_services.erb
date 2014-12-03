@@ -1,0 +1,40 @@
+<a class="anchor" name="services" ></a>
+<div class="row-2">
+  <div class="container">
+    <div class="wrapper">
+      <div class="columns sixteen">
+        <div class="aligncenter">
+          <div class="text-1 blue-ft-shadow">Our services</div>
+          <div class="text-2">LITS carries out projects of any difficulty and complexity. We ensure the best quality and the best professionals in the sphere of IT.<br />Mainly we specialize in:</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row-3">
+  <div class="container">
+    <div class="wrapper">
+      <div class="columns sixteen">
+        <% @services.each do |service| %>
+          <div class="box2" data-effect="<%= service.display_mode %>">
+            <a href="/services#<%= service.name %>">
+              <div class="box">
+                <div class="icon-wrap">
+                  <img src="<%= service.image_url %>">
+                </div>
+                <h2><%= service.title %></h2>
+                <p><%= service.header %></p>
+              </div>
+            </a>
+          </div>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <a href="/services" class="tp-button  medium orange fright">More services</a>
+  </div>
+</div>
+
