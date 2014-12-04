@@ -4,7 +4,8 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.3'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', group: [:development, :production]
+gem 'pg', group: :stage
 
 group :development do
   gem 'quiet_assets'
@@ -58,3 +59,5 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'execjs', group: :production
 #
 gem 'therubyracer', group: :production
+
+gem 'rails_12factor', group: :stage

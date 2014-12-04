@@ -29,6 +29,15 @@ test:
   password:
   host: localhost
 
+stage:
+  adapter: postresql
+  encoding: utf8
+  database: lits
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
 production:
   adapter: mysql2
   encoding: utf8
