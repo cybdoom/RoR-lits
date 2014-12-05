@@ -20,9 +20,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    validation:
+      reply:
+        contacts:
+          phone:
+            absent: 'At least phone number should be specified for contacts'
+            wrong_value: 'Phone number should be in the next format: 0631234567 (10 digits)'
+        english:
+          spoken:
+            absent: 'Spoken english level should be specified'
+            wrong_value: "Spoken english level should be: %{values_string}"
+          tech:
+            absent: 'Tech english level should be specified'
+            wrong_value: "Tech english level should be: %{values_string}"
+
   career:
     index:
       banner:
         text: 'Work with us, we are awesome'
       link:
         text: 'Look for vacancy'
+
+    reply:
+      english:
+        spoken:
+          levels:
+            0: 'Intermediate'
+            1: 'Upper intermediate'
+            2: 'Advanced'
+            3: 'Fluent'

@@ -1,0 +1,17 @@
+<% 5.times do |i| %>
+  reply_<%= i %>:
+    name: candidate_<%= i + 1 %>
+    contacts: {
+      phone: '063<%= (0..6).collect { SecureRandom.random_number(10).to_s }.join %>',
+      email: 'lits.candidate.test.email.<%= i + 1 %>@gmail.com'
+    }
+    city: <%= %w(Kiev Lvov Harkov Chernigov).sample %>
+    english: {
+      spoken: <%= SecureRandom.random_number(Reply::SPOKEN_ENGLISH_LEVELS) %>,
+      tech: <%= SecureRandom.random_number(Reply::TECH_ENGLISH_LEVELS + 1) %>
+    }
+    salary: <%= [nil, '1000-1500$', '2000-2500$', '3000$+'].sample %>
+    work_type: <%= SecureRandom.random_number 2 %>
+    work_hours: <%= 1 + SecureRandom.random_number(25) %>
+    vacancy: <%= %w(senior_ruby junior_frontend).sample %>
+<% end %>
