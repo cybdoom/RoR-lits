@@ -2,6 +2,8 @@ class Vacancy < ActiveRecord::Base
   has_many :replies
   belongs_to :user
 
+  scope :owned_by, ->(:user) { where(user_id: user.id) }
+
   serialize :requirements, Array
 
   validates :name, :description, presence: true
