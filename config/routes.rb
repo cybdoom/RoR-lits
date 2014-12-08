@@ -41,11 +41,6 @@ Lits::Application.routes.draw do
 
   get 'career' => 'career#index'
 
-  resources :vacancies do
-    post 'apply' => 'vacancy#apply'
-  end
-
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -100,5 +95,10 @@ Lits::Application.routes.draw do
     resources :services
     resources :posts
     resources :pages
+    resources :vacancies do
+      member do
+        post 'apply'
+      end
+    end
   end
 end
