@@ -38,6 +38,11 @@ Lits::Application.routes.draw do
   end
 
   resources :posts, :only => [:index]
+  resources :vacancies, :only => [:index, :show] do
+    member do
+      post 'apply'
+    end
+  end
 
   get 'career' => 'career#index'
 
@@ -95,10 +100,6 @@ Lits::Application.routes.draw do
     resources :services
     resources :posts
     resources :pages
-    resources :vacancies do
-      member do
-        post 'apply'
-      end
-    end
+    resources :vacancies
   end
 end
