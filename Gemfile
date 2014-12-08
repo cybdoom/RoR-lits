@@ -17,6 +17,9 @@ gem 'ckeditor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# For FontAwesome icons
+gem 'font-awesome-rails'
+
 gem 'haml-rails'
 
 # Use Uglifier as compressor for JavaScript assets
