@@ -50,3 +50,12 @@ en:
             1: 'Upper intermediate'
             2: 'Advanced'
             3: 'Fluent'
+
+  vacancies:
+    vacancy:
+      requirements:
+        header: 'Requirements:'
+      user:
+        none: '-none-'
+      salary:
+        none: '-contractual-'

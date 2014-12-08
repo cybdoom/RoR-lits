@@ -1,0 +1,23 @@
+.vacancy
+  .head
+    .name
+      = vacancy.name
+    .salary
+      %div
+        = fa_icon 'money'
+        %div
+          = vacancy.salary || t('vacancies.vacancy.salary.none')
+    .owner
+      %div
+        = fa_icon 'user'
+        %div
+          = vacancy.user.present? ? vacancy.user.name : t('vacancies.vacancy.user.none')
+  .details
+    = vacancy.description
+    .requirements
+      = t 'vacancies.vacancy.requirements.header'
+      - vacancy.requirements.each do |requirement|
+        .requirement
+          *
+          = requirement
+
