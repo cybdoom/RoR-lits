@@ -59,3 +59,12 @@ en:
         none: '-none-'
       salary:
         none: '-contractual-'
+
+      titles:
+        name: 'Vacancy name'
+        salary: 'Salary'
+        owner: 'Vacancy owner'
+        details: 'Vacancy details'
+
+    index:
+      empty-result: 'Empty vacancy list. Please create at least one'

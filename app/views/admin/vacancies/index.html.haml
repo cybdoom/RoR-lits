@@ -1,4 +1,8 @@
 .vacancies
   .control-panel
 
-  = render @vacancies
+  - if @vacancies.try(:any?)
+    = render @vacancies
+  - else
+    .empty-result
+      = t 'vacancies.index.empty-result'

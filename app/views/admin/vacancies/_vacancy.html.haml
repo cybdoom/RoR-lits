@@ -1,23 +1,24 @@
 .vacancy
   .head
-    .name
+    .name{ title: t('vacancies.vacancy.titles.name') }
       = vacancy.name
-    .salary
+    .salary{ title: t('vacancies.vacancy.titles.salary') }
       %div
         = fa_icon 'money'
         %div
           = vacancy.salary || t('vacancies.vacancy.salary.none')
-    .owner
+    .owner{ title: t('vacancies.vacancy.titles.owner') }
       %div
         = fa_icon 'user'
         %div
           = vacancy.user.present? ? vacancy.user.name : t('vacancies.vacancy.user.none')
-  .details
+  .details{ title: t('vacancies.vacancy.titles.details') }
     = vacancy.description
-    .requirements
-      = t 'vacancies.vacancy.requirements.header'
-      - vacancy.requirements.each do |requirement|
-        .requirement
-          *
-          = requirement
+    - if vacancy.requirements.try(:any?)
+      .requirements
+        = t 'vacancies.vacancy.requirements.header'
+        - vacancy.requirements.each do |requirement|
+          .requirement
+            *
+            = requirement
 
