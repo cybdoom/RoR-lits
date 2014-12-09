@@ -73,4 +73,5 @@ en:
 
     create:
       success: 'New vacancy was successfully created'
+      fail: 'Failed to create vacancy'
 

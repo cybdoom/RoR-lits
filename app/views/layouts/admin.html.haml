@@ -36,6 +36,13 @@
                       %a{:href => "/admin/pages"} Pages
                 / end menu
       .container
+        .flash-area
+          - if flash[:error].present?
+            .flash-error
+              = flash[:error]
+          - if flash[:notice].present?
+            .flash-notice
+              = flash[:notice]
         = yield
     :javascript
       $(document).ready(function(){

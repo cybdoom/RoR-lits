@@ -10,7 +10,13 @@ class Admin::VacanciesController < AdminController
   def create
     @vacancy = Vacancy.new vacancy_params
     if @vacancy.valid?
-
+      if @vacancy.save
+        flash[:notice] = I18n.t 'vacancies.create.success'
+        redirect_to action: :index
+      else
+        flash[:error] = I18n.t 'vacancies.create.fail'
+        redirect_to action: :new
+      end
     else
       flash[:error] = humanized_validation_error_message(@vacancy)
       redirect_to action: :new, vacancy: vacancy_params
