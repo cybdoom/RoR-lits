@@ -1,0 +1,17 @@
+.new-vacancy
+  = form_for(:vacancy, { url: admin_vacancies_url, method: :post }) do |f|
+    .input-cell
+      = f.label :name
+      = f.text_field :name
+    .input-cell
+      = f.label :description, class: 'description'
+      = f.text_area :description
+    .input-cell
+      = f.label :salary
+      = f.text_field :salary
+    - if current_user.is_admin?
+      .input-cell
+        = f.label :user_id, 'Owner'
+        = f.select :user_id, select_options_owner
+    = f.submit t('vacancies.new.submit')
+

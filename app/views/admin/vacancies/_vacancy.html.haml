@@ -13,12 +13,5 @@
         %div
           = vacancy.user.present? ? vacancy.user.name : t('vacancies.vacancy.user.none')
   .details{ title: t('vacancies.vacancy.titles.details') }
-    = vacancy.description
-    - if vacancy.requirements.try(:any?)
-      .requirements
-        = t 'vacancies.vacancy.requirements.header'
-        - vacancy.requirements.each do |requirement|
-          .requirement
-            *
-            = requirement
+    = vacancy.description.html_safe
 

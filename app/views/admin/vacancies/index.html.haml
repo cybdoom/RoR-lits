@@ -1,8 +1,12 @@
 .vacancies
   .control-panel
+    .control-button
+      = link_to new_admin_vacancy_path do
+        = fa_icon 'plus'
 
-  - if @vacancies.try(:any?)
-    = render @vacancies
-  - else
-    .empty-result
-      = t 'vacancies.index.empty-result'
+  .vacancy-list
+    - if @vacancies.try(:any?)
+      = render @vacancies
+    - else
+      .empty-result
+        = t 'vacancies.index.empty-result'

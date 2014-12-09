@@ -22,4 +22,8 @@ module ApplicationHelper
     end
   end
 
+  def humanized_validation_error_message record
+    record.errors.messages.map { |attr_name, messages| "#{ attr_name.to_s.capitalize.gsub('_', ' ') }: #{ messages.join(', ') }" }.join('</br>').html_safe
+  end
+
 end

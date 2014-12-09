@@ -53,8 +53,6 @@ en:
 
   vacancies:
     vacancy:
-      requirements:
-        header: 'Requirements:'
       user:
         none: '-none-'
       salary:
@@ -68,3 +66,11 @@ en:
 
     index:
       empty-result: 'Empty vacancy list. Please create at least one'
+      create-new: 'Create new vacancy'
+
+    new:
+      submit: 'Create'
+
+    create:
+      success: 'New vacancy was successfully created'
+
