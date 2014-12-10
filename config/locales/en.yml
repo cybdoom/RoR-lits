@@ -79,6 +79,13 @@ en:
       success: 'New vacancy was successfully created'
       fail: 'Failed to create vacancy'
 
+    edit:
+      submit: 'Update'
+
+    update:
+      success: 'Vacancy was successfully updated'
+      fail: 'Failed to update vacancy'
+
     destroy:
       success: 'Vacancy was successfully deleted'
       fail: 'Failed to delete vacancy'

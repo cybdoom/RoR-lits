@@ -1,4 +1,6 @@
 class Admin::VacanciesController < AdminController
+  before_action :set_vacancy, only: [:edit, :update, :destroy]
+
   def index
     @vacancies = current_user.is_admin? ? Vacancy.all : Vacancy.owned_by(current_user)
   end
@@ -23,8 +25,19 @@ class Admin::VacanciesController < AdminController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @vacancy.update vacancy_params
+      flash[:notice] = I18n.t 'vacancies.update.success'
+    else
+      flash[:error] = I18n.t 'vacancies.update.fail'
+    end
+    redirect_to action: :index
+  end
+
   def destroy
-    @vacancy = Vacancy.find params[:id]
     if @vacancy.destroy
       flash[:notice] = I18n.t 'vacancies.destroy.success'
     else
@@ -37,5 +50,9 @@ class Admin::VacanciesController < AdminController
 
   def vacancy_params
     params[:vacancy].present? ? params.require(:vacancy).permit(:name, :description, :salary, :user_id) : nil
+  end
+
+  def set_vacancy
+    @vacancy = Vacancy.find params[:id]
   end
 end
