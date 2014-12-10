@@ -15,3 +15,10 @@
   .details{ title: t('vacancies.vacancy.titles.details') }
     = vacancy.description.html_safe
 
+  .actions-panel
+    .action.edit{ title: t('vacancies.vacancy.actions.edit') }
+      = link_to edit_admin_vacancy_path(vacancy) do
+        = fa_icon 'pencil'
+    .action.delete{ title: t('vacancies.vacancy.actions.delete') }
+      = link_to(admin_vacancy_path(vacancy), method: :delete) do
+        = fa_icon 'trash'

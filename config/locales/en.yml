@@ -64,6 +64,10 @@ en:
         owner: 'Vacancy owner'
         details: 'Vacancy details'
 
+      actions:
+        edit: 'Edit'
+        delete: 'Delete'
+
     index:
       empty-result: 'Empty vacancy list. Please create at least one'
       create-new: 'Create new vacancy'
@@ -74,4 +78,8 @@ en:
     create:
       success: 'New vacancy was successfully created'
       fail: 'Failed to create vacancy'
+
+    destroy:
+      success: 'Vacancy was successfully deleted'
+      fail: 'Failed to delete vacancy'
 

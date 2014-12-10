@@ -23,6 +23,16 @@ class Admin::VacanciesController < AdminController
     end
   end
 
+  def destroy
+    @vacancy = Vacancy.find params[:id]
+    if @vacancy.destroy
+      flash[:notice] = I18n.t 'vacancies.destroy.success'
+    else
+      flash[:error] = I18n.t 'vacancies.destroy.fail'
+    end
+    redirect_to action: :index
+  end
+
   private
 
   def vacancy_params
