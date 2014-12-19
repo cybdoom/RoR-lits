@@ -40,6 +40,7 @@ Lits::Application.routes.draw do
   resources :posts, :only => [:index]
   resources :vacancies, :only => [:index, :show] do
     member do
+      get 'reply'
       post 'apply'
     end
   end

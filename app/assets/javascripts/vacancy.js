@@ -18,8 +18,8 @@ function Vacancy(html) {
   }
 
   function SetEventHandlers() {
-    self.ui.body.on('mouseenter mouseleave', ToggleActionsPanel);
-    self.ui.head.on('click', ToggleDetails);
+    self.ui.body.off().on('mouseenter mouseleave', ToggleActionsPanel);
+    self.ui.head.off().on('click', ToggleDetails);
   }
 
   SetEventHandlers();

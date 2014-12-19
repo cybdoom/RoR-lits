@@ -1,0 +1,16 @@
+.vacancy.for-candidate
+  .head
+    .name{ title: t('vacancies.vacancy.titles.name') }
+      = vacancy.name
+    .salary{ title: t('vacancies.vacancy.titles.salary') }
+      %div
+        = fa_icon 'money'
+        %div
+          = vacancy.salary || t('vacancies.vacancy.salary.none')
+  .details{ title: t('vacancies.vacancy.titles.details') }
+    = vacancy.description.html_safe
+  .reply
+    = link_to reply_vacancy_path(vacancy) do
+      = fa_icon 'reply'
+      = t('vacancies.reply.link')
+

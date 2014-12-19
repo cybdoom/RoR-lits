@@ -1,1 +1,10 @@
-List of available vacancies
+.vacancies
+  .vacancy-list.for-candidate
+    - if @vacancies.try(:any?)
+      = render @vacancies
+    - else
+      .empty-result
+        = t 'vacancies.index.no-one'
+
+= javascript_include_tag 'vacancy'
+= javascript_include_tag 'vacancies'

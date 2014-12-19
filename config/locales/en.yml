@@ -42,15 +42,6 @@ en:
       link:
         text: 'Look for vacancy'
 
-    reply:
-      english:
-        spoken:
-          levels:
-            0: 'Intermediate'
-            1: 'Upper intermediate'
-            2: 'Advanced'
-            3: 'Fluent'
-
   vacancies:
     vacancy:
       user:
@@ -68,8 +59,28 @@ en:
         edit: 'Edit'
         delete: 'Delete'
 
+    reply:
+      link: 'Reply'
+      placeholders:
+        name: 'Enter Your name here'
+        city: 'Where do You live now?'
+        salary: 'Enter Your reward expectations here'
+        new_contact: 'Enter Your contact here'
+      english:
+        title: 'English'
+        hints:
+          tech: 'Mark Your technical English level from 1 to 5'
+        spoken_levels:
+          0: 'Intermediate'
+          1: 'Upper intermediate'
+          2: 'Advanced'
+          3: 'Fluent'
+      contacts:
+        title: 'Contacts'
+
     index:
       empty-result: 'Empty vacancy list. Please create at least one'
+      no-one: 'There is on one for now'
       create-new: 'Create new vacancy'
 
     new:
