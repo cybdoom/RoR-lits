@@ -9,8 +9,8 @@
           = vacancy.salary || t('vacancies.vacancy.salary.none')
   .details{ title: t('vacancies.vacancy.titles.details') }
     = vacancy.description.html_safe
-  .reply
-    = link_to reply_vacancy_path(vacancy) do
-      = fa_icon 'reply'
-      = t('vacancies.reply.link')
+    .reply
+      = link_to reply_vacancy_path(vacancy) do
+        = fa_icon 'reply'
+        = t('vacancies.reply.link')
 

@@ -77,6 +77,10 @@ en:
           3: 'Fluent'
       contacts:
         title: 'Contacts'
+        types:
+          skype: 'Skype nickname'
+          email: 'Email address'
+          phone: 'Phone number'
 
     index:
       empty-result: 'Empty vacancy list. Please create at least one'

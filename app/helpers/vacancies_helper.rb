@@ -11,7 +11,11 @@ module VacanciesHelper
     options_for_select options, 1
   end
 
-  def contact_type_icon contact
-    'phone'
+  def contact_type_icon type
+    {
+      phone:  'phone',
+      email:  'envelope',
+      skype:  'skype'
+    }[type]
   end
 end

@@ -9,8 +9,8 @@ class VacanciesController < ApplicationController
   end
 
   def apply
-    @vacancy.apply
-    redirect_to action: index
+    @vacancy.apply apply_params
+    redirect_to action: :index
   end
 
   private
@@ -18,4 +18,11 @@ class VacanciesController < ApplicationController
   def set_vacancy
     @vacancy = Vacancy.find params[:id]
   end
+
+  def apply_params
+    result = params.require(:reply).permit(:name, :city, :salary, :spoken, :technical, :contacts, :cv)
+    result[:contacts] = JSON.parse result[:contacts]
+    result
+  end
+
 end

@@ -38,12 +38,15 @@ Lits::Application.routes.draw do
   end
 
   resources :posts, :only => [:index]
+
   resources :vacancies, :only => [:index, :show] do
     member do
       get 'reply'
       post 'apply'
     end
   end
+
+  get '/contact' => 'application#contact'
 
   get 'career' => 'career#index'
 

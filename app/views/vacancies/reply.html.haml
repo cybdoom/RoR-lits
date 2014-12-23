@@ -1,51 +1,59 @@
-= form_tag "/vacancies/#{ @vacancy.id }/apply", method: :post do
-  .reply
-    .big-cell
-      %div
-        .input-cell
-          = label_tag :name
-          = text_field_tag :name, nil, placeholder: t('vacancies.reply.placeholders.name')
-        .input-cell
-          = label_tag :city
-          = text_field_tag :city, nil, placeholder: t('vacancies.reply.placeholders.city')
-        .input-cell
-          = label_tag :salary
-          = text_field_tag :salary, nil, placeholder: t('vacancies.reply.placeholders.salary')
-    .big-cell
-      .english
+.reply
+  = form_tag "/vacancies/#{ @vacancy.id }/apply", method: :post do
+    = fields_for :reply do |reply|
+      .big-cell.inputs
+        %div
+          .input-cell
+            = label_tag :name
+            = reply.text_field :name, placeholder: t('vacancies.reply.placeholders.name')
+          .input-cell
+            = label_tag :city
+            = reply.text_field :city, placeholder: t('vacancies.reply.placeholders.city')
+          .input-cell
+            = label_tag :salary
+            = reply.text_field :salary, placeholder: t('vacancies.reply.placeholders.salary')
+      .big-cell.english
         %h3
           = t('vacancies.reply.english.title')
         .input-cell
           = label_tag :spoken
           %div
-            = select_tag :spoken, select_options_spoken_english
+            = reply.select :spoken, select_options_spoken_english
         .input-cell
           = label_tag :technical
           %div
-            = number_field_tag :technical, 5, min: 1, max: 5
+            = reply.number_field :technical, min: 1, max: 5, value: 4
             .hint
               = t('vacancies.reply.english.hints.tech')
-    .big-cell
-      .contacts
+      .big-cell.contacts
         %h3
           = t('vacancies.reply.contacts.title')
-        .contacts-list
-          - 5.times do
-            = render partial: 'contact', locals: { contact: { 'type' => 'phone', 'value' => '0637859498' } }
-        .add-contact
-          .new-contact
-            .contact-type-options
-              .contact-type-option
-                %div
-                  = fa_icon 'envelope'
-              .contact-type-option
-                %div
-                  = fa_icon 'phone'
-              .contact-type-option
-                %div
-                  = fa_icon 'skype'
-            = text_field :new_contact, '', placeholder: t('vacancies.reply.placeholders.new_contact')
-          .add-button
-            = fa_icon 'plus'
+        .contacts-list.empty
+          = reply.hidden_field :contacts
+        .new-contact
+          .validation-error
+          .contact-type-options{ value: 'email' }
+            .contact-type-option.selected{ value: 'email', title: t('vacancies.reply.contacts.types.email') }
+              %div
+                = fa_icon 'envelope'
+            .contact-type-option{ value: 'phone', title: t('vacancies.reply.contacts.types.phone') }
+              %div
+                = fa_icon 'phone'
+            .contact-type-option{ value: 'skype', title: t('vacancies.reply.contacts.types.skype') }
+              %div
+                = fa_icon 'skype'
+          .contact-value
+            = text_field_tag :new_contact, '', placeholder: t('vacancies.reply.placeholders.new_contact')
+        .add-button.off{ title: 'Add contact' }
+          = fa_icon 'plus'
+      .big-cell.attach-and-apply
+        %div
+          .attach-button{ title: 'Attach CV' }
+            .file-icon.empty
+              = fa_icon 'file'
+            = reply.file_field :cv
+          .apply-button{ title: 'Apply for vacancy' }
+            = fa_icon 'forward'
 
-
+= javascript_include_tag 'contacts_viewer'
+= javascript_include_tag 'application/reply'

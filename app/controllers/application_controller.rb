@@ -8,4 +8,14 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def contact
+    render partial: 'shared/contact', locals: { contact: contact_params }
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:type, :value)
+  end
+
 end

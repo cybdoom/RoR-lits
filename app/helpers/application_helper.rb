@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def parse_page_meta_info page_name
-    page = Page.find_last_by_name page_name
+    page = Page.find_by_name page_name
     if page
       @page_title = page.title
       @page_description = page.description

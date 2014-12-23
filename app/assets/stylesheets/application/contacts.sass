@@ -1,7 +1,7 @@
 .contacts
   .contacts-list
     max-height: 180px
-    overflow: scroll
+    overflow: auto
     border-top: solid 1px #264E74
     border-bottom: solid 1px #264E74
 
@@ -29,37 +29,62 @@
       .delete-button:hover
         color: red
 
-  .add-contact
-    padding: 10px
+  .contacts-list.empty
+    border-bottom: none
 
-    .new-contact
+  .new-contact
+    display: none
+
+    .validation-error
+      text-align: center
+      color: red
+      margin-left: auto
+      margin-right: auto
+      margin-top: 5px
+      width: 90%
+      background: #FFDDDD
+      border-radius: 10px
+      padding: 4px
       display: none
 
-      .contact-type-options
-        width: 100%
-        display: table
+    .contact-type-options
+      width: 100%
+      display: table
 
-        .contact-type-option
-          display: table-cell
-          width: 33%
-          text-align: center
-          font-size: 40px
+      .contact-type-option
+        display: table-cell
+        width: 33%
+        text-align: center
+        font-size: 40px
 
-          div:hover
-            background: #DDFFDD
+        div:hover
+          background: #DDFFDD
 
-    .add-button
-      color: #77FF77
-      width: 52px
-      height: 52px
-      margin: auto
-      text-align: center
-      font-size: 50px
-      border-radius: 26px
-      border: 2px solid #77FF77
-      background: #DDFFDD
+      .contact-type-option.selected[value="skype"]
+        color: #55AAFF
 
-    .add-button:hover
-      background: yellow
-      color: orange
-      border-color: orange
+      .contact-type-option.selected[value="phone"]
+        color: #00AA00
+
+      .contact-type-option.selected[value="email"]
+        color: #FF0000
+
+
+  .add-button
+    color: #77FF77
+    width: 52px
+    height: 52px
+    margin-left: auto
+    margin-right: auto
+    margin-top: 8px
+    margin-bottom: 8px
+    text-align: center
+    font-size: 50px
+    border-radius: 26px
+    border: 2px solid #77FF77
+    background: #DDFFDD
+
+  .add-button.on
+    background: yellow
+    color: orange
+    border-color: orange
