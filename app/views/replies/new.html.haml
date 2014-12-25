@@ -2,7 +2,8 @@
   - if @reply.errors.any?
     .validation-error
       = raw @reply.errors.full_messages.join '<br>'
-  = form_for @reply, url: "/vacancies/#{ @vacancy.id }/apply" do |f|
+  = form_for @reply do |f|
+    = f.hidden_field :vacancy_id
     .general
       %h3
         = t('vacancies.reply.general.title')
@@ -24,7 +25,7 @@
         = t('vacancies.reply.contacts.title')
       .contacts-list{ class: @reply.contacts.empty? ? 'empty' : '' }
         = f.hidden_field :contacts
-        = render partial: 'contact', collection: @reply.contacts
+        = render partial: 'shared/contact', collection: JSON.parse(@reply.contacts)
       .new-contact
         .validation-error
         .contact-type-options{ value: 'email' }

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def contact
-    render partial: 'vacancies/contact', locals: { contact: contact_params }
+    render partial: 'shared/contact', locals: { contact: contact_params }
   end
 
   private

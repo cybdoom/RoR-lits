@@ -12,4 +12,5 @@
  *= require_self
  *= require_tree ./admin
  *= require vacancies
+ *= require replies
  */

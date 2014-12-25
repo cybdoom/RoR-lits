@@ -1,0 +1,5 @@
+- if @replies.try(:any?)
+  = render @replies
+- else
+  .empty-result
+    = t 'vacancies.reply.empty-result'

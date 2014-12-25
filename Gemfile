@@ -22,6 +22,11 @@ gem 'sass-rails', '~> 4.0.0'
 # For FontAwesome icons
 gem 'font-awesome-rails'
 
+# Bootstrap
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
+# HAML
 gem 'haml-rails'
 
 # Use Uglifier as compressor for JavaScript assets

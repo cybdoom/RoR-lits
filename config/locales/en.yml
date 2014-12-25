@@ -61,6 +61,7 @@ en:
         details: 'Vacancy details'
 
       actions:
+        replies: 'Show all current replies'
         edit: 'Edit'
         delete: 'Delete'
 
@@ -86,6 +87,16 @@ en:
           skype: 'Skype nickname'
           email: 'Email address'
           phone: 'Phone number'
+      general:
+        title: 'General information'
+
+      empty-result: 'There is no replies for this vacancy yet'
+
+      cooperation:
+        title: 'Cooperation terms'
+        types:
+          office: 'Office'
+          remote: 'Remote'
       success: 'You have successfully applied for the vacancy'
       fail: 'Failed to apply for the vacancy'
 

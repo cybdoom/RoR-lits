@@ -1,0 +1,35 @@
+.reply
+  .general
+    %h3
+      = t('vacancies.reply.general.title')
+    = label_tag :name
+    = reply.name
+
+    = label_tag :city
+    = reply.city
+  .english
+    %h3
+      = t('vacancies.reply.english.title')
+    = label_tag :spoken
+    = reply.english.spoken
+
+    = label_tag :technical
+    = reply.english.technical
+  .contacts
+    %h3
+      = t('vacancies.reply.contacts.title')
+    .contacts-list
+      = render partial: 'shared/contact', collection: reply.contacts
+  .work-conditions
+    %h3
+      = t('vacancies.reply.cooperation.title')
+    = label_tag :salary
+    = reply.salary
+
+    = label_tag :work_type
+    = reply.work_type
+
+    = label_tag :work_hours
+    = reply.work_hours
+  .cv
+    Some file attached

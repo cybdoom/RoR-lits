@@ -6,7 +6,7 @@ function Reply(html) {
     body:            body,
     applyButton:     body.find('.apply-button'),
     fileIcon:        body.find('.file-icon'),
-    fileInput:       body.find('.attach-and-apply input'),
+    fileInput:       body.find('.cv input'),
     form:            body.find('form'),
     contactsInput:   body.find('#reply_contacts')
   }
