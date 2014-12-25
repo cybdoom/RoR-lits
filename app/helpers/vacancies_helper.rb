@@ -13,9 +13,9 @@ module VacanciesHelper
 
   def contact_type_icon type
     {
-      phone:  'phone',
-      email:  'envelope',
-      skype:  'skype'
+      'phone' => 'phone',
+      'email' => 'envelope',
+      'skype' => 'skype'
     }[type]
   end
 end

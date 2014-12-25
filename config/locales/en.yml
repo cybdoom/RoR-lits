@@ -24,9 +24,14 @@ en:
     validation:
       reply:
         contacts:
+          email:
+            no_one: 'should contain at least one valid email'
+            invalid: 'email is invalid: %{email}'
           phone:
-            absent: 'At least phone number should be specified for contacts'
-            wrong_value: 'Phone number should be in the next format: 0631234567 (10 digits)'
+            invalid: 'phone number is invalid: %{phone}'
+          skype:
+            invalid: 'skype nickname is invalid: %{skype}'
+
         english:
           spoken:
             absent: 'Spoken english level should be specified'
@@ -81,6 +86,8 @@ en:
           skype: 'Skype nickname'
           email: 'Email address'
           phone: 'Phone number'
+      success: 'You have successfully applied for the vacancy'
+      fail: 'Failed to apply for the vacancy'
 
     index:
       empty-result: 'Empty vacancy list. Please create at least one'

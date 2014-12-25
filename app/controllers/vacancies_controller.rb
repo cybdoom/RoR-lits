@@ -6,11 +6,17 @@ class VacanciesController < ApplicationController
   end
 
   def reply
+    @reply = Reply.new
   end
 
   def apply
-    @vacancy.apply apply_params
-    redirect_to action: :index
+    @reply = Reply.new(reply_params.merge vacancy_id: @vacancy.id)
+    if @reply.save
+      flash[:notice] = I18n.t 'vacancies.reply.success'
+      redirect_to action: :index
+    else
+      render 'reply'
+    end
   end
 
   private
@@ -19,10 +25,8 @@ class VacanciesController < ApplicationController
     @vacancy = Vacancy.find params[:id]
   end
 
-  def apply_params
-    result = params.require(:reply).permit(:name, :city, :salary, :spoken, :technical, :contacts, :cv)
-    result[:contacts] = JSON.parse result[:contacts]
-    result
+  def reply_params
+    params.require(:reply).permit(:name, :city, :salary, :spoken, :technical, :contacts, :cv)
   end
 
 end

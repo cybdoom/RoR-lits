@@ -2,7 +2,7 @@ class Reply < ActiveRecord::Base
   belongs_to :vacancy
   has_attached_file :cv
 
-  serialize :contacts, Hash
+  serialize :contacts, Array
   serialize :english, Hash
 
   SPOKEN_ENGLISH_LEVELS = 4
@@ -16,5 +16,21 @@ class Reply < ActiveRecord::Base
   validates :salary, length: { maximum: 32 }
 
   validates_with ContactsValidator, EnglishKnowledgeValidator
-  validates_attachment :cv, presence: true, size: { less_than: 2.megabyte }
+  validates_attachment :cv, presence: true, size: { less_than: 2.megabyte }, content_type: { content_type: ['text/plain', 'application/msword', 'application/pdf'] }
+
+  def spoken
+    english[:spoken]
+  end
+
+  def spoken= value
+    english[:spoken] = value
+  end
+
+  def technical
+    english[:technical]
+  end
+
+  def technical= value
+    english[:technical] = value
+  end
 end

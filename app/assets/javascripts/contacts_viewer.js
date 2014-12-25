@@ -17,24 +17,18 @@ function ContactsViewer(html) {
     newContact: {
       type: 'email',
       value: ''
-    },
-
-    validationPatterns: {
-      email:    /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/,
-      skype:    /^[a-zA-Z][a-zA-Z0-9\.,\-_]{5,31}$/,
-      phone:   /^[0-9-\(\)\.]+$/
     }
   }
 
   function ValidateNewContact() {
-    var regExp            =  self.model.validationPatterns[self.model.newContact.type],
-        value             =  self.model.newContact.value,
-        comparisonResult  =  regExp.test(value);
-    if (comparisonResult)
+    var isValid = self.model.newContact.value.length > 0;
+
+    if (isValid)
       self.ui.validationError.fadeOut();
     else
       self.ui.validationError.fadeIn();
-    return comparisonResult;
+
+    return isValid;
   }
 
   function AddContact() {

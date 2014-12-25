@@ -1,0 +1,9 @@
+.contact
+  .contact-type{ value: contact['type'] }
+    = fa_icon(contact_type_icon contact['type'])
+  .contact-value{ value: contact['value'] }
+    = contact['value']
+  .delete-button
+    = fa_icon 'trash-o'
+
+= javascript_include_tag 'contact'

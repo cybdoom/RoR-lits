@@ -1,3 +1,6 @@
+- if flash[:notice].present?
+  .flash-notice
+    = flash[:notice]
 .vacancies
   .vacancy-list.for-candidate
     - if @vacancies.try(:any?)

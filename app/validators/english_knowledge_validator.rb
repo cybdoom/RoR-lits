@@ -12,11 +12,11 @@ class EnglishKnowledgeValidator < ActiveModel::Validator
       end
     end
 
-    if english[:tech].to_s.empty?
+    if english[:technical].to_s.empty?
       record.errors[:base] << I18n.t('errors.validation.reply.english.tech.absent')
     else
       begin
-        level = Integer english[:tech]
+        level = Integer english[:technical]
         raise 'Invalid value' unless (1..Reply::TECH_ENGLISH_LEVELS ).include? level
       rescue
         record.errors[:base] << I18n.t('errors.validation.reply.english.tech.wrong_value', value_string: "1..#{ Reply.TECH_ENGLISH_LEVELS }" )

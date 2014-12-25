@@ -13,6 +13,8 @@ end
 
 gem 'paperclip'
 gem 'ckeditor'
+gem 'email_validator'
+gem 'phone'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -62,5 +64,6 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'execjs', group: :production
 #
 gem 'therubyracer', group: :production
+
 
 gem 'rails_12factor', group: :stage

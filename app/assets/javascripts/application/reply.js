@@ -11,12 +11,14 @@ function Reply(html) {
     contactsInput:   body.find('#reply_contacts')
   }
 
-  function UpdateFileIconClass() {
+  function UpdateIcons() {
     if (self.ui.fileInput[0].files.length <= 0) {
       self.ui.fileIcon.addClass('empty');
+      self.ui.applyButton.addClass('disabled')
       return false;
     } else
       self.ui.fileIcon.removeClass('empty');
+      self.ui.applyButton.removeClass('disabled')
       return true;
   }
 
@@ -32,14 +34,14 @@ function Reply(html) {
   }
 
   function OnApplyButtonClick(e) {
-    if (UpdateFileIconClass()) {
+    if (UpdateIcons()) {
       UpdateContactsInput();
       self.ui.form.submit();
     }
   }
 
   function OnFileInputChanged() {
-    UpdateFileIconClass();
+    UpdateIcons();
   }
 
   function SetEventHandlers() {
