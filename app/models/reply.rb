@@ -1,6 +1,7 @@
 class Reply < ActiveRecord::Base
   belongs_to :vacancy
-  has_attached_file :cv
+
+  mount_uploader :cv, CVUploader
 
   serialize :contacts, Array
   serialize :english, Hash
@@ -16,7 +17,7 @@ class Reply < ActiveRecord::Base
   validates :salary, length: { maximum: 32 }
 
   validates_with ContactsValidator, EnglishKnowledgeValidator
-  validates_attachment :cv, presence: true, size: { less_than: 2.megabyte }, content_type: { content_type: ['text/plain', 'application/msword', 'application/pdf'] }
+  validate :validate_cv_size
 
   def spoken
     english[:spoken]
@@ -32,5 +33,13 @@ class Reply < ActiveRecord::Base
 
   def technical= value
     english[:technical] = value
+  end
+
+  def contacts= value
+    super value.is_a?(String) ? JSON.parse(value) : value
+  end
+
+  def validate_cv_size
+    errors[:cv] << I18n.t('errors.validation.reply.cv.size') if cv.size > 3.megabytes
   end
 end

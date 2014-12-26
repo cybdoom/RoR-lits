@@ -31,14 +31,16 @@ en:
             invalid: 'phone number is invalid: %{phone}'
           skype:
             invalid: 'skype nickname is invalid: %{skype}'
+        cv:
+          size: 'should be less than 3MB'
 
         english:
           spoken:
             absent: 'Spoken english level should be specified'
-            wrong_value: "Spoken english level should be: %{values_string}"
+            wrong_value: "Spoken english level should be: %{value_string}"
           tech:
             absent: 'Tech english level should be specified'
-            wrong_value: "Tech english level should be: %{values_string}"
+            wrong_value: "Tech english level should be: %{value_string}"
 
   career:
     index:

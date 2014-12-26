@@ -3,12 +3,14 @@ function Reply(html) {
       self = this;
 
   this.ui = {
-    body:            body,
-    applyButton:     body.find('.apply-button'),
-    fileIcon:        body.find('.file-icon'),
-    fileInput:       body.find('.cv input'),
-    form:            body.find('form'),
-    contactsInput:   body.find('#reply_contacts')
+    body:                 body,
+    applyButton:          body.find('.apply-button'),
+    fileIcon:             body.find('.file-icon'),
+    fileInput:            body.find('.cv input'),
+    form:                 body.find('form'),
+    contactsInput:        body.find('#reply_contacts'),
+    workHoursInput:       body.find('.work-hours'),
+    radiobuttons:          body.find('.work-type-option')
   }
 
   function UpdateIcons() {
@@ -44,9 +46,14 @@ function Reply(html) {
     UpdateIcons();
   }
 
+  function ToggleWorkHoursField() {
+    self.ui.workHoursInput.attr('readonly', self.ui.workHoursInput.attr('readonly') == 'readonly' ? null : 'readonly')
+  }
+
   function SetEventHandlers() {
     self.ui.applyButton.off().on('click', OnApplyButtonClick);
     self.ui.fileInput.off().on('change', OnFileInputChanged);
+    self.ui.radiobuttons.off().on('change', ToggleWorkHoursField);
   }
 
   SetEventHandlers();

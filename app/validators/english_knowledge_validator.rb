@@ -8,7 +8,7 @@ class EnglishKnowledgeValidator < ActiveModel::Validator
         level = Integer english[:spoken]
         raise 'Invalid value' unless (0..Reply::SPOKEN_ENGLISH_LEVELS - 1).include? level
       rescue
-        record.errors[:base] << I18n.t('errors.validation.reply.english.spoken.wrong_value', value_string: "0..#{ Reply.SPOKEN_ENGLISH_LEVELS - 1 }")
+        record.errors[:base] << I18n.t('errors.validation.reply.english.spoken.wrong_value', value_string: "0..#{ Reply::SPOKEN_ENGLISH_LEVELS - 1 }" )
       end
     end
 
@@ -19,7 +19,7 @@ class EnglishKnowledgeValidator < ActiveModel::Validator
         level = Integer english[:technical]
         raise 'Invalid value' unless (1..Reply::TECH_ENGLISH_LEVELS ).include? level
       rescue
-        record.errors[:base] << I18n.t('errors.validation.reply.english.tech.wrong_value', value_string: "1..#{ Reply.TECH_ENGLISH_LEVELS }" )
+        record.errors[:base] << I18n.t('errors.validation.reply.english.tech.wrong_value', value_string: "1..#{ Reply::TECH_ENGLISH_LEVELS }" )
       end
     end
   end

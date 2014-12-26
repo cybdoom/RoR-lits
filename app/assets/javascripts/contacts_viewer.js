@@ -57,7 +57,7 @@ function ContactsViewer(html) {
     } else if (was == 'on' && ValidateNewContact())
       AddContact();
     else
-      self.ui.validationError.html('Please enter valid contact')
+      self.ui.validationError.html('Please enter valid contact');
   }
 
   function OnContactTypeClicked() {
@@ -70,14 +70,14 @@ function ContactsViewer(html) {
     $(this).addClass('selected');
   }
 
-  function OnContactValueKeyUp() {
+  function OnContactValueUpdated() {
     self.model.newContact.value = this.value;
   }
 
   function SetEventHandlers() {
     self.ui.addButton.off().on('click', OnAddButtonClicked);
     self.ui.contactTypes.off().on('click', OnContactTypeClicked);
-    self.ui.contactValue.off().keyup(OnContactValueKeyUp);
+    self.ui.contactValue.off().on('keyup change', OnContactValueUpdated);
   }
 
   SetEventHandlers();

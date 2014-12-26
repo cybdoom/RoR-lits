@@ -37,6 +37,11 @@ GEM
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
     builder (3.1.4)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     ckeditor (4.1.0)
       mime-types
       orm_adapter (~> 0.5.0)
@@ -161,6 +166,7 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt-ruby (~> 3.1.2)
   bootstrap-sass
+  carrierwave
   ckeditor
   coffee-rails (~> 4.0.0)
   email_validator

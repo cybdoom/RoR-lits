@@ -1,7 +1,7 @@
-- if flash[:notice].present?
-  .flash-notice
-    = flash[:notice]
 .vacancies
+  - if flash[:notice].present?
+    .flash-notice
+      = flash[:notice]
   .vacancy-list.for-candidate
     - if @vacancies.try(:any?)
       = render @vacancies

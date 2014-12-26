@@ -10,7 +10,7 @@
   .details{ title: t('vacancies.vacancy.titles.details') }
     = vacancy.description.html_safe
     .reply
-      = link_to new_reply_path do
+      = link_to new_reply_path(vacancy_id: vacancy.id) do
         = fa_icon 'reply'
         = t('vacancies.reply.link')
 

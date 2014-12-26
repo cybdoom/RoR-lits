@@ -1,5 +1,5 @@
 .reply
-  .general
+  .general.partiotion
     %h3
       = t('vacancies.reply.general.title')
     = label_tag :name
@@ -7,20 +7,20 @@
 
     = label_tag :city
     = reply.city
-  .english
+  .english.partiotion
     %h3
       = t('vacancies.reply.english.title')
     = label_tag :spoken
-    = reply.english.spoken
+    = (t "vacancies.reply.english.spoken_levels")[reply.spoken.to_i]
 
     = label_tag :technical
-    = reply.english.technical
-  .contacts
+    = reply.technical
+  .contacts.partiotion
     %h3
       = t('vacancies.reply.contacts.title')
     .contacts-list
-      = render partial: 'shared/contact', collection: reply.contacts
-  .work-conditions
+      = render partial: 'contact', collection: reply.contacts
+  .cooperation.partiotion
     %h3
       = t('vacancies.reply.cooperation.title')
     = label_tag :salary
@@ -31,5 +31,6 @@
 
     = label_tag :work_hours
     = reply.work_hours
-  .cv
-    Some file attached
+  .cv.partiotion
+    = link_to reply.cv.url do
+      = fa_icon 'file'

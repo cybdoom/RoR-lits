@@ -16,6 +16,8 @@ gem 'ckeditor'
 gem 'email_validator'
 gem 'phone'
 
+gem 'carrierwave'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
