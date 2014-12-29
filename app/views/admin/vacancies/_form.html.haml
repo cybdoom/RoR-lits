@@ -12,5 +12,7 @@
     .input-cell
       = f.label :user_id, 'Owner'
       = f.select :user_id, select_options_owner
+  - else
+    = f.hidden_field :user_id, value: current_user.id
   = f.submit t(action_name == 'new' ? 'vacancies.new.submit' : 'vacancies.edit.submit')
 
