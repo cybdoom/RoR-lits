@@ -10,7 +10,7 @@ function Reply(html) {
     form:                 body.find('form'),
     contactsInput:        body.find('#reply_contacts'),
     workHoursInput:       body.find('.work-hours'),
-    radiobuttons:          body.find('.work-type-option')
+    radiobuttons:         body.find('.work-type-option')
   }
 
   function UpdateIcons() {

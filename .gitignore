@@ -11,3 +11,5 @@
 /vendor/bundle
 
 .rvmrc
+
+/public/files
