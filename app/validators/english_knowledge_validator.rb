@@ -6,6 +6,7 @@ class EnglishKnowledgeValidator < ActiveModel::Validator
     else
       begin
         level = Integer english[:spoken]
+        p level
         raise 'Invalid value' unless (0..Reply::SPOKEN_ENGLISH_LEVELS - 1).include? level
       rescue
         record.errors[:base] << I18n.t('errors.validation.reply.english.spoken.wrong_value', value_string: "0..#{ Reply::SPOKEN_ENGLISH_LEVELS - 1 }" )

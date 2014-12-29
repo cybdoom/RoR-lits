@@ -4,18 +4,24 @@ class ReplyTest < ActiveSupport::TestCase
   setup do
     @valid_attributes = {
       name: 'valid name',
-      contacts: {
-        phone: '0631111111',
-        email: 'valid.email@gmail.com'
-      },
+      contacts: [
+        {
+          'type'   =>  'phone',
+          'value'  =>  '+380631234567'
+        },
+        {
+          'type'   =>  'email',
+          'value'  =>  'valid.email@gmail.com'
+        }
+      ],
       city: 'valid city',
       english: {
         spoken: 2,
-        tech: 2,
+        technical: 2,
       },
       salary: '1000-1500$',
       work_type: 0,
-      work_hours: nil,
+      work_hours: 8,
       vacancy_id: nil
     }
   end
@@ -87,47 +93,59 @@ class ReplyTest < ActiveSupport::TestCase
 
   test 'validates "contacts" field properly' do
     reply = Reply.create @valid_attributes
-    reply.contacts.merge phone: nil # must be present
+
+    valid_contacts = [{'type' => 'email', 'value' => 'cybdoom@gmail.com'}]
+    reply.contacts = valid_contacts
+    assert reply.valid?
+
+    reply.contacts = valid_contacts + [{'type' => 'phone', 'value' => '12345'}] # wrong phone number
     assert reply.invalid?
 
-    reply.contacts.merge phone: '+380631234567' # wrong format
+    reply.contacts = valid_contacts + [{'type' => 'skype', 'value' => '123'}] # wrong skype login
+    assert reply.invalid?
+
+    reply.contacts = valid_contacts + [{'type' => 'email', 'value' => '123@321'}] # wrong email
+    assert reply.invalid?
+
+    reply.contacts = [{'type' => 'phone', 'value' => '+380637859498'}] # email is absent
     assert reply.invalid?
   end
 
   test 'validates "english" field properly' do
     reply = Reply.create @valid_attributes
 
-    reply.english.merge spoken: nil # must be present
+    reply.english.merge! spoken: nil # must be present
+    puts reply.errors.messages
     assert reply.invalid?
 
-    reply.english.merge spoken: -1 # too small
+    reply.english.merge! spoken: -1 # too small
     assert reply.invalid?
 
-    reply.english.merge spoken: Reply::SPOKEN_ENGLISH_LEVELS # too large
+    reply.english.merge! spoken: Reply::SPOKEN_ENGLISH_LEVELS # too large
     assert reply.invalid?
 
-    reply.english.merge spoken: 1.5 # should be an integer
+    reply.english.merge! spoken: '1.5' # should be an integer
     assert reply.invalid?
 
-    reply.english.merge spoken: 'Advanced' # should be a number
+    reply.english.merge! spoken: 'Advanced' # should be a number
     assert reply.invalid?
 
-    reply.english.merge({
+    reply.english.merge!({
       spoken: 2,
-      tech: nil # should be present
+      technical: nil # should be present
     })
     assert reply.invalid?
 
-    reply.english.merge tech: 0 # too small
+    reply.english.merge! technical: 0 # too small
     assert reply.invalid?
 
-    reply.english.merge tech: Reply::TECH_ENGLISH_LEVELS + 1 # too large
+    reply.english.merge! technical: Reply::TECH_ENGLISH_LEVELS + 1 # too large
     assert reply.invalid?
 
-    reply.english.merge tech: 2.3 # should be an integer
+    reply.english.merge! technical: '2.3' # should be an integer
     assert reply.invalid?
 
-    reply.english.merge tech: 'Fluent' # should be a number
+    reply.english.merge! technical: 'Fluent' # should be a number
     assert reply.invalid?
   end
 end
