@@ -61,6 +61,7 @@ en:
         salary: 'Salary'
         owner: 'Vacancy owner'
         details: 'Vacancy details'
+        reply: 'Reply for this vacancy'
 
       actions:
         replies: 'Show all current replies'
@@ -99,10 +100,15 @@ en:
         types:
           office: 'Office'
           remote: 'Remote'
+
+      cv:
+        title: 'Attach CV'
+
       success: 'You have successfully applied for the vacancy'
       fail: 'Failed to apply for the vacancy'
 
     index:
+      title: 'List of our actual vacancies'
       empty-result: 'Empty vacancy list. Please create at least one'
       no-one: 'There is on one for now'
       create-new: 'Create new vacancy'

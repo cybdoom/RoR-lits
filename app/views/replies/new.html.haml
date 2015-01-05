@@ -56,6 +56,8 @@
       = label_tag :work_hours
       = f.text_field :work_hours, value: 8, readonly: 'readonly', class: 'work-hours'
     .cv.step
+      %h3
+        = t('vacancies.reply.cv.title')
       .attach-button{ title: 'Attach CV' }
         .file-icon.empty
           = fa_icon 'file'
