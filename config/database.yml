@@ -29,13 +29,13 @@ test:
   password:
   host: localhost
 
-stage:
-  adapter: postresql
+staging:
+  adapter: mysql2
   encoding: utf8
-  database: lits
+  database: devlits_db
   pool: 5
-  username: root
-  password:
+  username: devlits_u
+  password: DH8t13Y23O
   host: localhost
 
 production:

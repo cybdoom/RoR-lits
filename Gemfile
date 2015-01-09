@@ -4,8 +4,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.3'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', group: [:development, :production]
-gem 'pg', group: :stage
+gem 'mysql2'
 
 group :development do
   gem 'quiet_assets'
@@ -63,14 +62,11 @@ gem 'will_paginate', '~> 3.0.5'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'execjs', group: :production
-#
-gem 'therubyracer', group: :production
-
-
-gem 'rails_12factor', group: :stage
+gem 'execjs'
+gem 'therubyracer'
