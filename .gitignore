@@ -1,5 +1,6 @@
 .DS_Store
 .rspec
+.capistrano
 /log
 /tmp
 /db/*.sqlite3
