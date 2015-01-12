@@ -101,7 +101,11 @@ Lits::Application.routes.draw do
     resources :services
     resources :posts
     resources :pages
-    resources :vacancies
+    resources :vacancies do
+      member do
+        get 'clone'
+      end
+    end
     resources :replies, only: [:index, :delete]
   end
 end

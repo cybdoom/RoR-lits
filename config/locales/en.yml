@@ -67,6 +67,7 @@ en:
         replies: 'Show all current replies'
         edit: 'Edit'
         delete: 'Delete'
+        clone: 'Clone'
 
     reply:
       link: 'Reply'
@@ -126,6 +127,10 @@ en:
     update:
       success: 'Vacancy was successfully updated'
       fail: 'Failed to update vacancy'
+
+    clone:
+      success: 'Vacancy was cloned'
+      fail: 'Failed to clone vacancy'
 
     destroy:
       success: 'Vacancy was successfully deleted'

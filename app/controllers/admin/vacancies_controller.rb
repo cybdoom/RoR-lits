@@ -1,8 +1,19 @@
 class Admin::VacanciesController < AdminController
-  before_action :set_vacancy, only: [:edit, :update, :destroy]
+  before_action :set_vacancy, only: [:edit, :update, :clone, :destroy]
 
   def index
     @vacancies = current_user.is_admin? ? Vacancy.all : Vacancy.owned_by(current_user)
+  end
+
+  def clone
+    copy = @vacancy.dup
+    if copy.save
+      flash[:notice] = I18n.t 'vacancies.clone.success'
+    else
+      flash[:error] = I18n.t 'vacancies.clone.fail'
+    end
+
+    redirect_to action: :index
   end
 
   def new
