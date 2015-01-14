@@ -10,7 +10,9 @@ function Reply(html) {
     form:                 body.find('form'),
     contactsInput:        body.find('#reply_contacts'),
     workHoursInput:       body.find('.work-hours'),
-    radiobuttons:         body.find('.work-type-option')
+    radiobuttons:         body.find('.work-type-option'),
+    dobHiddenInput:       body.find('#reply_dob'),
+    dobInput:             body.find('.dob-input'),
   }
 
   function UpdateIcons() {
@@ -50,10 +52,15 @@ function Reply(html) {
     self.ui.workHoursInput.attr('readonly', self.ui.workHoursInput.attr('readonly') == 'readonly' ? null : 'readonly')
   }
 
+  function SetDob() {
+    self.ui.dobHiddenInput.attr('value', self.ui.dobInput.val());
+  }
+
   function SetEventHandlers() {
     self.ui.applyButton.off().on('click', OnApplyButtonClick);
     self.ui.fileInput.off().on('change', OnFileInputChanged);
     self.ui.radiobuttons.off().on('change', ToggleWorkHoursField);
+    self.ui.dobInput.off().on('change', SetDob);
   }
 
   SetEventHandlers();

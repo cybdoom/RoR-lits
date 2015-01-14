@@ -9,6 +9,9 @@
         = t('vacancies.reply.general.title')
       = label_tag :name
       = f.text_field :name, placeholder: t('vacancies.reply.placeholders.name')
+      = label_tag :dob
+      = f.hidden_field :dob
+      %input{type: "text", 'data-provide' => 'datepicker', class: 'dob-input'}
       = label_tag :city
       = f.text_field :city, placeholder: t('vacancies.reply.placeholders.city')
     .english.step

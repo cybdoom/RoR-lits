@@ -12,6 +12,7 @@ class Reply < ActiveRecord::Base
   validates :name, :contacts, :city, :english, :work_type, presence: true
   validates :name, length: { minimum: 2, maximum: 128 }
   validates :city, length: { minimum: 3, maximum: 128 }
+  validates :dob, presence: true
   validates :work_hours, numericality: { only_integer: true, greater_than: 0, less_than: 25 }
   validates :work_type, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than: 2 }
   validates :salary, length: { maximum: 32 }
@@ -37,6 +38,10 @@ class Reply < ActiveRecord::Base
 
   def contacts= value
     super value.is_a?(String) ? JSON.parse(value) : value
+  end
+
+  def dob= value
+    super value.to_date
   end
 
   def validate_cv_size

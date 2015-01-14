@@ -25,6 +25,8 @@ gem 'font-awesome-rails'
 
 # Bootstrap
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
+
 gem 'autoprefixer-rails'
 
 # HAML

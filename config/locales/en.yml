@@ -72,7 +72,7 @@ en:
     reply:
       link: 'Reply'
       placeholders:
-        name: 'Enter Your name here'
+        name: 'Enter Your name and surname here'
         city: 'Where do You live now?'
         salary: 'Enter Your reward expectations here'
         new_contact: 'Enter Your contact here'

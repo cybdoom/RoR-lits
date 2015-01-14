@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226154650) do
+ActiveRecord::Schema.define(version: 20150114082018) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141226154650) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cv"
+    t.date     "dob"
   end
 
   add_index "replies", ["vacancy_id"], name: "index_replies_on_vacancy_id", using: :btree
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 20141226154650) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status"
   end
 
 end
