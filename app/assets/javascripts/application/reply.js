@@ -20,10 +20,11 @@ function Reply(html) {
       self.ui.fileIcon.addClass('empty');
       self.ui.applyButton.addClass('disabled')
       return false;
-    } else
+    } else {
       self.ui.fileIcon.removeClass('empty');
       self.ui.applyButton.removeClass('disabled')
       return true;
+    }
   }
 
   function UpdateContactsInput() {

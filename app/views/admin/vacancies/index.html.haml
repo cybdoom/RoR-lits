@@ -3,6 +3,7 @@
     .control-button
       = link_to new_admin_vacancy_path do
         = fa_icon 'plus'
+      = t 'vacancies.index.filter'
 
   .vacancy-list
     - if @vacancies.try(:any?)

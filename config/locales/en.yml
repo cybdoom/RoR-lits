@@ -113,6 +113,7 @@ en:
       empty-result: 'Empty vacancy list. Please create at least one'
       no-one: 'There is on one for now'
       create-new: 'Create new vacancy'
+      filter: 'Filter by owner:'
 
     new:
       submit: 'Create'
