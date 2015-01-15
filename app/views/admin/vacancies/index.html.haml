@@ -3,7 +3,9 @@
     .control-button
       = link_to new_admin_vacancy_path do
         = fa_icon 'plus'
-      = t 'vacancies.index.filter'
+      - if current_user.is_admin?
+        = t 'vacancies.index.filter'
+        = select_tag :user_filter, select_options_user_filter
 
   .vacancy-list
     - if @vacancies.try(:any?)
@@ -13,4 +15,4 @@
         = t 'vacancies.index.empty-result'
 
 = javascript_include_tag 'vacancy'
-= javascript_include_tag 'vacancies'
+= javascript_include_tag 'vacanciesViewer'

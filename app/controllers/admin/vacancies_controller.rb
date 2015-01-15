@@ -3,6 +3,7 @@ class Admin::VacanciesController < AdminController
 
   def index
     @vacancies = current_user.is_admin? ? Vacancy.all : Vacancy.owned_by(current_user)
+    @vacancies = @vacancies.owned_by(User.find(params[:user_filter])) if params[:user_filter].present?
   end
 
   def clone

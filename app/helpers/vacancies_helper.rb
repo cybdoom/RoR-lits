@@ -11,6 +11,11 @@ module VacanciesHelper
     options_for_select options, 1
   end
 
+  def select_options_user_filter
+    options = (User.hrs + User.admins).map { |user| [user.name, user.id] }
+    options_for_select options, params[:user_filter].present? ? params[:user_filter] : options[0][0]
+  end
+
   def contact_type_icon type
     {
       'phone' => 'phone',
