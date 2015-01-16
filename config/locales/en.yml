@@ -68,6 +68,8 @@ en:
         edit: 'Edit'
         delete: 'Delete'
         clone: 'Clone'
+        freeze: 'Freeze'
+        unfreeze: 'Unfreeze'
 
     reply:
       link: 'Reply'
@@ -132,6 +134,10 @@ en:
     clone:
       success: 'Vacancy was cloned'
       fail: 'Failed to clone vacancy'
+
+    freeze:
+      success: 'Vacancy was freezed'
+      fail: 'Failed to freeze vacancy'
 
     destroy:
       success: 'Vacancy was successfully deleted'

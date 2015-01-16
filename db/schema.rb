@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150114082018) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status"
+    t.integer  "status",      default: 0
   end
 
 end

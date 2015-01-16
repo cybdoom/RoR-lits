@@ -1,5 +1,6 @@
 .vacancy
   .head
+    = fa_icon 'clock-o' if vacancy.frozen?
     .name{ title: t('vacancies.vacancy.titles.name') }
       = vacancy.name
     .salary{ title: t('vacancies.vacancy.titles.salary') }
@@ -25,6 +26,9 @@
     .action.clone{ title: t('vacancies.vacancy.actions.clone') }
       = link_to clone_admin_vacancy_path(vacancy) do
         = fa_icon 'copy'
+    .action.clone{ title: vacancy.frozen? ? t('vacancies.vacancy.actions.unfreeze') : t('vacancies.vacancy.actions.freeze') }
+      = link_to toggle_freeze_admin_vacancy_path(vacancy) do
+        = fa_icon 'clock-o'
     .action.delete{ title: t('vacancies.vacancy.actions.delete') }
       = link_to(admin_vacancy_path(vacancy), method: :delete) do
         = fa_icon 'trash'

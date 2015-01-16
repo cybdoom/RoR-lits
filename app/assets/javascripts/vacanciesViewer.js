@@ -2,8 +2,6 @@ function VacanciesViewer(html) {
   var self = this,
       body = $(html);
 
-  console.log(html);
-
   this.ui = {
     userFilter: body.find('#user_filter')
   };
@@ -13,8 +11,6 @@ function VacanciesViewer(html) {
     if (!/\?/.test(oldUrl)) oldUrl += '?';
     var filterString = 'user_filter=' + userId,
         newUrl = /user_filter=/.test(oldUrl) ? oldUrl.replace(/user_filter=\d+/, filterString) : oldUrl + filterString;
-
-    console.log(newUrl);
 
     window.location.href = newUrl;
   }

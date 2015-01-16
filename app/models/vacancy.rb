@@ -13,4 +13,10 @@ class Vacancy < ActiveRecord::Base
   def status
     STATUSES[super]
   end
+
+  def status= value
+    super STATUSES.map.with_index.to_h[value]
+  end
+
+  STATUSES.each { |status| define_method("#{status}?") { self.status == status } }
 end

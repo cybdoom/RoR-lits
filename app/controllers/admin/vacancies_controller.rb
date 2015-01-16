@@ -1,5 +1,5 @@
 class Admin::VacanciesController < AdminController
-  before_action :set_vacancy, only: [:edit, :update, :clone, :destroy]
+  before_action :set_vacancy, only: [:edit, :update, :clone, :toggle_freeze, :destroy]
 
   def index
     @vacancies = current_user.is_admin? ? Vacancy.all : Vacancy.owned_by(current_user)
@@ -12,6 +12,16 @@ class Admin::VacanciesController < AdminController
       flash[:notice] = I18n.t 'vacancies.clone.success'
     else
       flash[:error] = I18n.t 'vacancies.clone.fail'
+    end
+
+    redirect_to action: :index
+  end
+
+  def toggle_freeze
+    if @vacancy.update_attribute :status, (@vacancy.frozen? ? :avctual : :frozen)
+      flash[:notice] = I18n.t 'vacancies.freeze.success'
+    else
+      flash[:error] = I18n.t 'vacancies.freeze.fail'
     end
 
     redirect_to action: :index

@@ -104,6 +104,7 @@ Lits::Application.routes.draw do
     resources :vacancies do
       member do
         get 'clone'
+        get 'toggle_freeze'
       end
     end
     resources :replies, only: [:index, :delete]
