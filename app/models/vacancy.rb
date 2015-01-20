@@ -15,6 +15,8 @@ class Vacancy < ActiveRecord::Base
   end
 
   def status= value
+    p value
+    p STATUSES.map.with_index.to_h[value]
     super STATUSES.map.with_index.to_h[value]
   end
 

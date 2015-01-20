@@ -135,9 +135,13 @@ en:
       success: 'Vacancy was cloned'
       fail: 'Failed to clone vacancy'
 
-    freeze:
-      success: 'Vacancy was freezed'
-      fail: 'Failed to freeze vacancy'
+    toggle_freeze:
+      freeze:
+        success: 'Vacancy was freezed'
+        fail: 'Failed to freeze vacancy'
+      unfreeze:
+        success: 'Vacancy was unfreezed'
+        fail: 'Failed to unfreeze vacancy'
 
     destroy:
       success: 'Vacancy was successfully deleted'

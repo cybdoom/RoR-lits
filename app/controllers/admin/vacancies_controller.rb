@@ -18,10 +18,11 @@ class Admin::VacanciesController < AdminController
   end
 
   def toggle_freeze
-    if @vacancy.update_attribute :status, (@vacancy.frozen? ? :avctual : :frozen)
-      flash[:notice] = I18n.t 'vacancies.freeze.success'
+    new_status = @vacancy.frozen? ? :actual : :frozen
+    if @vacancy.update_attribute :status, new_status
+      flash[:notice] = I18n.t "vacancies.toggle_freeze.#{ new_status == :frozen ? 'freeze' : 'unfreeze' }.success"
     else
-      flash[:error] = I18n.t 'vacancies.freeze.fail'
+      flash[:error] = I18n.t "vacancies.toggle_freeze.#{ new_status == :frozen ? 'freeze' : 'unfreeze' }.fail"
     end
 
     redirect_to action: :index
