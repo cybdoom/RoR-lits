@@ -4,14 +4,20 @@
       = t('vacancies.reply.general.title')
     = label_tag :name
     = reply.name
+    %br
 
     = label_tag :city
     = reply.city
+    %br
+
+    = label_tag :dob
+    = reply.dob
   .english.partiotion
     %h3
       = t('vacancies.reply.english.title')
     = label_tag :spoken
     = (t "vacancies.reply.english.spoken_levels")[reply.spoken.to_i]
+    %br
 
     = label_tag :technical
     = reply.technical
@@ -25,9 +31,11 @@
       = t('vacancies.reply.cooperation.title')
     = label_tag :salary
     = reply.salary
+    %br
 
     = label_tag :work_type
     = reply.work_type
+    %br
 
     = label_tag :work_hours
     = reply.work_hours
