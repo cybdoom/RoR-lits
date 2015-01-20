@@ -1,3 +1,5 @@
+require 'capistrano-unicorn'
+
 set :application, 'lits'
 set :repo_url, 'https://github.com/cybdoom/lits'
 set :scm, :git
@@ -45,3 +47,8 @@ server 'devlits.com', user: 'dev_lits',password: 'bD5RCXBw', roles: %w{web app}
 #     # password: 'please use keys'
 #   }
 # setting per server overrides global ssh_options
+
+# Hooks for running unicorn tasks automaticaly when deployed
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)

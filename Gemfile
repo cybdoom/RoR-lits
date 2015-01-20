@@ -65,6 +65,7 @@ gem 'will_paginate', '~> 3.0.5'
 
 # Use Capistrano for deployment
 gem 'capistrano'
+gem 'capistrano-unicorn'
 gem 'rvm-capistrano'
 
 # Use debugger
