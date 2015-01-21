@@ -1,43 +1,44 @@
-.reply
-  .general.partiotion
-    %h3
-      = t('vacancies.reply.general.title')
-    = label_tag :name
-    = reply.name
-    %br
+.reply{:style => 'background-color:lightblue;width:600px;height:300px;margin:0;padding:0;border:0px hidden;color:black;'}
+  %span
+    .general.partiotion{:style => 'padding-left:40px;padding-top:10px;'}
+      %h3{:style => 'margin:0;padding:0;color:black;'}
+        = t('vacancies.reply.general.title')
+      = label_tag :name
+      = reply.name
+      %br
 
-    = label_tag :city
-    = reply.city
-    %br
+      = label_tag :city
+      = reply.city
+      %br
 
-    = label_tag :dob
-    = reply.dob
-  .english.partiotion
-    %h3
-      = t('vacancies.reply.english.title')
-    = label_tag :spoken
-    = (t "vacancies.reply.english.spoken_levels")[reply.spoken.to_i]
-    %br
+      = label_tag :dob
+      = reply.dob
+    .english.partiotion{:style => 'padding-left:40px;color:black;'}
+      %h3
+        = t('vacancies.reply.english.title')
+      = label_tag :spoken
+      = (t "vacancies.reply.english.spoken_levels")[reply.spoken.to_i]
+      %br
 
-    = label_tag :technical
-    = reply.technical
-  .contacts.partiotion
-    %h3
-      = t('vacancies.reply.contacts.title')
-    .contacts-list
-      - reply.contacts.each do |contact|
-        = contact['type']
-        = contact['value']
-  .cooperation.partiotion
-    %h3
-      = t('vacancies.reply.cooperation.title')
-    = label_tag :salary
-    = reply.salary
-    %br
+      = label_tag :technical
+      = reply.technical
+    .contacts.partiotion{:style => 'padding-left:40px;color:black;'}
+      %h3
+        = t('vacancies.reply.contacts.title')
+      .contacts-list
+        - reply.contacts.each do |contact|
+          = contact['type']
+          = contact['value']
+    .cooperation.partiotion{:style => 'padding-left:40px;color:black;'}
+      %h3
+        = t('vacancies.reply.cooperation.title')
+      = label_tag :salary
+      = reply.salary
+      %br
 
-    = label_tag :work_type
-    = reply.work_type
-    %br
+      = label_tag :work_type
+      = reply.work_type
+      %br
 
-    = label_tag :work_hours
-    = reply.work_hours
+      = label_tag :work_hours
+      = reply.work_hours
