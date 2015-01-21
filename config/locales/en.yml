@@ -43,6 +43,10 @@ en:
             wrong_value: "Tech english level should be: %{value_string}"
 
   career:
+    mail:
+      vacancy_created:
+        subject: 'Vacancy was created'
+        body: 'Vacancy was created'
     index:
       banner:
         text: 'Work with us, we are awesome'

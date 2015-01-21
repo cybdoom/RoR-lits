@@ -1,3 +1,10 @@
 = t 'career.mail.vacancy_created.body'
-Owner: = @vacancy.owner.name
-Link: = admin_vacancy_path(@vacancy)
+%br
+Owner:
+= @vacancy.user.name
+<
+= @vacancy.user.email
+>
+%br
+Link:
+= admin_vacancy_url(@vacancy)

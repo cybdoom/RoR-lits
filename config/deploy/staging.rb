@@ -1,4 +1,4 @@
-require 'capistrano-unicorn'
+# require 'capistrano-unicorn'
 
 set :application, 'lits'
 set :repo_url, 'https://github.com/cybdoom/lits'

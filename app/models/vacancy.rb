@@ -1,4 +1,8 @@
 class Vacancy < ActiveRecord::Base
+  after_create ->(created_vacancy) do
+    CareerMailer.vacancy_created(created_vacancy).deliver
+  end
+
   STATUSES = [:actual, :frozen]
 
   has_many :replies
@@ -15,8 +19,6 @@ class Vacancy < ActiveRecord::Base
   end
 
   def status= value
-    p value
-    p STATUSES.map.with_index.to_h[value]
     super STATUSES.map.with_index.to_h[value]
   end
 

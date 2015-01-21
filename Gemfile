@@ -64,7 +64,7 @@ gem 'will_paginate', '~> 3.0.5'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano'
+gem 'capistrano', '~> 2'
 gem 'capistrano-unicorn'
 gem 'rvm-capistrano'
 
