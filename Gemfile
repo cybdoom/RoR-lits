@@ -64,9 +64,10 @@ gem 'will_paginate', '~> 3.0.5'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 2'
-gem 'capistrano-unicorn'
+gem 'capistrano'
+gem 'capistrano-ext'
 gem 'rvm-capistrano'
+gem 'capistrano-unicorn'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
