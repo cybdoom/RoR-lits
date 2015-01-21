@@ -47,6 +47,9 @@ en:
       vacancy_created:
         subject: 'Vacancy was created'
         body: 'Vacancy was created'
+      reply_created:
+        subject: 'Candidat has replied for vacancy'
+        body: 'Someone left reply for vacancy managed by You'
     index:
       banner:
         text: 'Work with us, we are awesome'

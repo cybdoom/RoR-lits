@@ -32,10 +32,10 @@ test:
 staging:
   adapter: mysql2
   encoding: utf8
-  database: devlits_db
+  database: lits
   pool: 5
-  username: devlits_u
-  password: DH8t13Y23O
+  username: root
+  password:
   host: localhost
 
 production:

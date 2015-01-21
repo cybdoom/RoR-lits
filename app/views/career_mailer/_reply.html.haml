@@ -25,7 +25,9 @@
     %h3
       = t('vacancies.reply.contacts.title')
     .contacts-list
-      = render partial: 'admin/replies/contact', collection: reply.contacts
+      - reply.contacts.each do |contact|
+        = contact['type']
+        = contact['value']
   .cooperation.partiotion
     %h3
       = t('vacancies.reply.cooperation.title')
@@ -39,6 +41,3 @@
 
     = label_tag :work_hours
     = reply.work_hours
-  .cv.partiotion
-    = link_to reply.cv.url do
-      = fa_icon 'file'

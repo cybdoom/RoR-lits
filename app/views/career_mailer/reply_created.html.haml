@@ -1,0 +1,6 @@
+= t 'career.mail.reply_created.body'
+%br
+= render partial: 'reply', locals: { reply: @reply }
+%br
+Vacancy:
+= admin_vacancy_url(@reply.vacancy)
