@@ -7,12 +7,12 @@ class User < ActiveRecord::Base
   ROLES.each do |role|
     scope role.to_s + 's', ->() do
       role_i = ROLES.map.with_index.to_h[role]
-      puts role_i
       where(role: role_i)
     end
   end
 
   validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, email: true
   validates :role, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: ROLES.size - 1 }
 
   ROLES.each { |role_name| define_method("is_#{ role_name }?") { ROLES[self.role] == role_name } }
