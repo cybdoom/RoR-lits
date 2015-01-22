@@ -21,6 +21,14 @@ set :use_sudo, false
 default_run_options[:pty] = true
 set :rails_env, "staging"
 
+after 'deploy:update_code', 'bundler:bundle_install'
+
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'   # app preloaded
 after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
+
+namespace :bundler do
+  task :bundle_install, :roles => :app do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle install --without test"
+  end
+end
