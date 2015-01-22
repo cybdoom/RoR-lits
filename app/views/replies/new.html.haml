@@ -51,9 +51,9 @@
         = t('vacancies.reply.cooperation.title')
       = label_tag :salary
       = f.text_field :salary, placeholder: t('vacancies.reply.placeholders.salary')
-      = f.radio_button :work_type, 0, class: 'work-type-option'
+      = f.check_box :work_type, class: 'work-type-option'
       = label_tag :work_type_office, t('vacancies.reply.cooperation.types.office')
-      = f.radio_button :work_type, 1, class: 'work-type-option'
+      = f.check_box :work_type, class: 'work-type-option-1'
       = label_tag :work_type_remote, t('vacancies.reply.cooperation.types.remote')
       %br
       = label_tag :work_hours
