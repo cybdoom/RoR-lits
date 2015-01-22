@@ -10,7 +10,7 @@ function Reply(html) {
     form:                 body.find('form'),
     contactsInput:        body.find('#reply_contacts'),
     workHoursInput:       body.find('.work-hours'),
-    radiobuttons:         body.find('.work-type-option-1'),
+    remoteCheckbox:       body.find('.work-type-option-remote'),
     dobHiddenInput:       body.find('#reply_dob'),
     dobInput:             body.find('.dob-input'),
   }
@@ -60,7 +60,7 @@ function Reply(html) {
   function SetEventHandlers() {
     self.ui.applyButton.off().on('click', OnApplyButtonClick);
     self.ui.fileInput.off().on('change', OnFileInputChanged);
-    self.ui.radiobuttons.off().on('change', ToggleWorkHoursField);
+    self.ui.remoteCheckbox.off().on('change', ToggleWorkHoursField);
     self.ui.dobInput.off().on('change', SetDob);
   }
 
