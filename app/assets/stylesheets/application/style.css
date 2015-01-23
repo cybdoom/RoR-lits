@@ -292,7 +292,7 @@ nav { float:left; }
 
 .header-social { float: right; font-size: 12px; font-weight: 700; padding: 3px 0; position: relative; text-decoration: none; }
 
-/* CONTENT 
+/* CONTENT
 ==========================*/
 #content { padding: 42px 0 65px 0; border-bottom: 5px solid #f1f0ed; }
 
@@ -320,7 +320,7 @@ a.link-name { color:#F3930A!important; font-weight: 400; }
 
 .tab-wrap { background: url("/images/bar-bg.png") no-repeat scroll 50% 31px #272727; -webkit-border-radius: 40px 40px 0 0; -moz-border-radius: 40px 40px 0 0; border-radius: 40px 40px 0 0; padding: 80px 40px 0; }
 
-/* Miscellaneous Site Styles 
+/* Miscellaneous Site Styles
 ==========================*/
 p:empty { display: none; }
 
@@ -374,7 +374,7 @@ h5.headline { padding: 0 0 8px 0; margin: 0px 0 12px 0; }
 
 .overlay:hover { opacity: 1; -moz-opacity: 1; filter:alpha(opacity=100); }
 
-/* Tags 
+/* Tags
 ==========================*/
 
 .tagcloud { float: left; }
@@ -384,7 +384,7 @@ h5.headline { padding: 0 0 8px 0; margin: 0px 0 12px 0; }
 
 .tagcloud a:hover { background: url("..//images/patterns/hash.html") repeat scroll left top #AF242C; color: #fff; box-shadow: 0 0 1px rgba(0, 0, 0, 0.0); -webkit-box-shadow:  0 0 1px rgba(0, 0, 0, 0.0); -moz-box-shadow:  0 0 1px rgba(0, 0, 0, 0.0); }
 
-/* Error Page 
+/* Error Page
 ==========================*/
 .error-page h2 { font-size: 41px; line-height: 64px; }
 
@@ -400,13 +400,13 @@ h5.headline { padding: 0 0 8px 0; margin: 0px 0 12px 0; }
 
 .error-btn:hover { background-color: #007AFF; color: #FFFFFF; }
 
-/* Header 
+/* Header
 ==========================*/
 #header { min-height: 80px; }
 
 #logo-image { width: auto; height: auto; }
 
-/* Features 
+/* Features
 ==========================*/
 .features { margin: 0 0 0 0; }
 
@@ -515,11 +515,11 @@ background-color: #C74039 !important; filter: dropshadow(color=#a43b37, offx=1, 
 ==========================*/
 .prev, .next { -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; width: 21px; height: 21px; display: block; text-indent: -9999px }
 
-.prev { background: url(/images/icons/pagination_prev.png) no-repeat 50% 50%; background-color: #606060; float: left; }
+.prev { background: url(/images/icons/pagination_prev.png) no-repeat 50% 50%; background-size: cover; background-color: white; float: left; }
 
-.next { background: url(/images/icons/pagination_next.png) no-repeat 50% 50%; background-color: #606060; float: right; }
+.next { background: url(/images/icons/pagination_next.png) no-repeat 50% 50%; background-size: cover; background-color: white; float: right; }
 
-.project-nav .next:hover, .project-nav .prev:hover, .prev:hover, .next:hover { background-color: #000; }
+/*.project-nav .next:hover, .project-nav .prev:hover, .prev:hover, .next:hover { background-color: #000; }*/
 
 .project-nav .prev.off, .project-nav .next.off, .prev.off, .next.off { background-color: #ccc; }
 
@@ -560,7 +560,7 @@ a.current-page { color: #444; border-top: 3px solid #555; }
 /* Login Box */
 #loginBox { position:absolute; top:34px; right:0; display:none; z-index:29; }
 
-/* If the Login Button has been clicked */    
+/* If the Login Button has been clicked */
 #loginButton.active { border-radius:3px 3px 0 0; }
 
 #loginButton.active span { background-position:53px -76px; }
@@ -845,7 +845,7 @@ border-radius: 0 0 3px 3px; }
 
 #copyright a, #copyright span { color:#bbb; }
 
-/* Tagline 1 
+/* Tagline 1
 ==========================*/
 .tagline { background: none repeat scroll 0 0 #FCFCFC; border: 1px solid #E4E4E4; border-radius: 3px 3px 3px 3px; margin: 20px 0; padding: 20px 20px; text-align: center; }
 
@@ -857,7 +857,7 @@ border-radius: 0 0 3px 3px; }
 
 .text-color-red { color: #F3930A; }
 
-/* Tagline 2 
+/* Tagline 2
 ==========================*/
 .tagline2 { margin: 0; padding: 0 10px 0; text-align: center; }
 
@@ -953,7 +953,7 @@ border-radius: 0 0 3px 3px; }
 
 .small-three-col-blog-video iframe { width: 210px; height: 204px; }
 
-/*  Addthis Widget 
+/*  Addthis Widget
 ==========================*/
 
 .addthis_button_google_plusone { position: relative; top: 0; }
@@ -1561,7 +1561,7 @@ height: 243px;
 header .fixed {
     position: fixed;
     top:0; left:0;
-    width: 100%; 
+    width: 100%;
     z-index: 99999;
     background: #fff;
     margin-bottom: 8px;
@@ -1571,3 +1571,10 @@ header .fixed {
 a.anchor{display: block; position: relative; top: -55px; visibility: hidden;}
 
 #Stage_cover {cursor:pointer !important;}
+
+.datepicker thead tr:first-child .prev:hover{
+  background: url(/images/icons/pagination_prev.png) no-repeat 50% 50%; background-size: cover; background-color: white; float: left;
+}
+.datepicker thead tr:first-child .next:hover{
+  background: url(/images/icons/pagination_next.png) no-repeat 50% 50%; background-size: cover; background-color: white; float: right;
+}
