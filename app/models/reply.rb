@@ -1,4 +1,8 @@
 class Reply < ActiveRecord::Base
+  after_create ->(created_reply) do
+    CareerMailer.reply_created(created_reply).deliver
+  end
+
   belongs_to :vacancy
 
   mount_uploader :cv, CVUploader

@@ -1,47 +1,34 @@
-set :application, 'lits'
-set :repo_url, 'https://github.com/cybdoom/lits'
-set :scm, :git
+require 'capistrano-unicorn'
+
+set :normalize_asset_timestamps, false
+
+role :web, "devlits.com"                          # Your HTTP server, Apache/etc
+role :app, "devlits.com"                          # This may be the same as your `Web` server
+role :db,  "devlits.com", :primary => true        # This is where Rails migrations will run
+
+set :user, "dev_lits"
+set :repository, "https://github.com/cybdoom/lits.git"
+
 set :branch, "stage"
 set :deploy_via, :copy
+set :git_shallow_clone, 1
+set :keep_releases, 3
+set :application, "lits"
+set :scm, :git
+set :deploy_to, "/var/www/devlits.com/devlits.com/docroot"
+set :use_sudo, false
 
-set :deploy_to, '/var/www/devlits.com/devlits.com/docroot/lits'
+default_run_options[:pty] = true
+set :rails_env, "staging"
 
-# ==================
-# Supports bulk-adding hosts to roles, the primary
-# server in each group is considered to be the first
-# unless any hosts have the primary property set.
-# Don't declare `role :all`, it's a meta role
-role :app, %w{dev_lits@devlits.com}
-role :web, %w{dev_lits@devlits.com}
-role :db,  %w{dev_lits@devlits.com}
+after 'deploy:update_code', 'bundler:bundle_install'
 
-# Extended Server Syntax
-# ======================
-# This can be used to drop a more detailed server
-# definition into the server list. The second argument
-# something that quacks like a hash can be used to set
-# extended properties on the server.
-set :stage, :staging
-server 'devlits.com', user: 'dev_lits',password: 'bD5RCXBw', roles: %w{web app}
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
 
-# you can set custom ssh options
-# it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
-# you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
-# set it globally
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
-# and/or per server
-# server 'example.com',
-#   user: 'user_name',
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: 'user_name', # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: 'please use keys'
-#   }
-# setting per server overrides global ssh_options
+namespace :bundler do
+  task :bundle_install, :roles => :app do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle install --without test"
+  end
+end

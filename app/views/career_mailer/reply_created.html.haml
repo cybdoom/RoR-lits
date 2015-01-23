@@ -1,0 +1,8 @@
+.first{:style => 'width:600px;background-color:#2980B9;box-shadow:inset 0px 1px 11px -2px;height:50px;margin:0;padding:0;border:0px hidden;border-radius:5px 5px 0 0;'}
+  %p{:style => 'margin:0;font-size: 16px;font-weight:bold;display: table-cell;height: 50px;vertical-align: middle;padding-left:40px;padding-top:15px;color:black;'}
+    = t 'career.mail.reply_created.body'
+= render partial: 'reply', locals: { reply: @reply }
+.third.sizing{:style => 'border-radius:0 0 5px 5px;background-color:lightblue;width:600px;height:50px;margin:0;padding:0;border:0px hidden;'}
+  %p{:style => 'margin:0;font-size: 14px;display: table-cell;height: 50px;vertical-align: middle;padding-left:40px;padding-top:15px;'}
+    Vacancy:
+    = admin_vacancy_url(@reply.vacancy)

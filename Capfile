@@ -1,10 +1,6 @@
-# Load DSL and Setup Up Stages
-require 'capistrano/setup'
+load 'deploy'
+# Uncomment if you are using Rails' asset pipeline
+    # load 'deploy/assets'
+load 'config/deploy' # remove this line to skip loading any of the default tasks
 
-# Includes default deployment tasks
-require 'capistrano/deploy'
-
-# Manage rvm whie deploying
-require 'rvm/capistrano'
-
-Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
+require 'capistrano/ext/multistage'
