@@ -1,4 +1,4 @@
-deploy_to    =  "/var/www/devlits.com/devlits.com/docroot/lits"
+deploy_to    =  "/var/www/devlits.com/devlits.com/docroot"
 rails_root   =  "#{deploy_to}/current"
 pid_file     =  "#{deploy_to}/shared/pids/lits_unicorn.pid"
 socket_file  =  "#{deploy_to}/shared/lits_unicorn.sock"
