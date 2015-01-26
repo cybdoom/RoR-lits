@@ -21,7 +21,12 @@ set :branch, :stage
 
 server 'devlits.com', user: 'dev_lits', roles: %w{web app}
 
-
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a
