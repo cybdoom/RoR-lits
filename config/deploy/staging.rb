@@ -7,10 +7,11 @@
 role :app, %w{dev_lits@devlits.com}
 role :web, %w{dev_lits@devlits.com}
 role :db,  %w{dev_lits@devlits.com}
-
+# password bD5RCXBw
 set :repo_url, "git@github.com:cybdoom/lits.git"
 set :deploy_to, '/var/www/devlits.com/devlits.com/docroot'
 set :branch, :stage
+set :deploy_via, :remote_cache
 
 
 # Extended Server Syntax
