@@ -14,3 +14,14 @@
  *= require vacancies
  *= require replies
  */
+
+.logout-button {
+  position: absolute;
+  right: -50px;
+  top: 10px;
+  font-size: 40px;
+}
+
+.logout-button .fa {
+  color: #FFAA36;
+}
