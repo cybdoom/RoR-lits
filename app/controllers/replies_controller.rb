@@ -16,7 +16,7 @@ class RepliesController < ApplicationController
   end
 
   def reply_params
-    params.require(:reply).permit(:name, :dob, :city, :salary, :work_type, :work_hours, :spoken, :technical, :contacts, :cv, :vacancy_id)
+    params.require(:reply).permit(:name, :dob, :city, :salary, :work_types, :work_hours, :spoken, :technical, :contacts, :cv, :vacancy_id)
   end
 
 end

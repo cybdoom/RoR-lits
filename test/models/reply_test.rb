@@ -20,7 +20,7 @@ class ReplyTest < ActiveSupport::TestCase
         technical: 2,
       },
       salary: '1000-1500$',
-      work_type: 0,
+      work_types: [:remote, :office],
       work_hours: 8,
       vacancy_id: nil
     }
@@ -65,28 +65,12 @@ class ReplyTest < ActiveSupport::TestCase
 
     invalid_attributes = invalid_attributes.merge({
       city: 'Valid city name',
-      work_type: nil # must be present
+      work_types: nil # must be present
     })
     reply = Reply.create invalid_attributes
     assert_not reply.persisted?
 
-    invalid_attributes = invalid_attributes.merge work_type: nil # must be present
-    reply = Reply.create invalid_attributes
-    assert_not reply.persisted?
-
-    invalid_attributes = invalid_attributes.merge work_type: -1 # too small
-    reply = Reply.create invalid_attributes
-    assert_not reply.persisted?
-
-    invalid_attributes = invalid_attributes.merge work_type: 2 # too large
-    reply = Reply.create invalid_attributes
-    assert_not reply.persisted?
-
-    invalid_attributes = invalid_attributes.merge work_hours: 0 # too small
-    reply = Reply.create invalid_attributes
-    assert_not reply.persisted?
-
-    invalid_attributes = invalid_attributes.merge work_hours: 25 # too large
+    invalid_attributes = invalid_attributes.merge work_types: nil # must be present
     reply = Reply.create invalid_attributes
     assert_not reply.persisted?
   end
