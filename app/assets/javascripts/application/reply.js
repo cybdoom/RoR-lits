@@ -13,6 +13,8 @@ function Reply(html) {
     remoteCheckbox:       body.find('.work-type-option-remote'),
     dobHiddenInput:       body.find('#reply_dob'),
     dobInput:             body.find('.dob-input'),
+    workTypeCheckboxes:   body.find('.work-type-option'),
+    workTypesHiddenInput: body.find('#reply_work_types')
   }
 
   function UpdateIcons() {
@@ -57,10 +59,19 @@ function Reply(html) {
     self.ui.dobHiddenInput.attr('value', self.ui.dobInput.val());
   }
 
+  function SetWorkTypes(e) {
+    var workTypes = [];
+    $.each(self.ui.workTypeCheckboxes, function(i, checkbox) {
+      if ($(checkbox).prop('checked')) workTypes.push($(checkbox).attr('value'));
+    });
+    self.ui.workTypesHiddenInput.attr('value', JSON.stringify(workTypes));
+  }
+
   function SetEventHandlers() {
     self.ui.applyButton.off().on('click', OnApplyButtonClick);
     self.ui.fileInput.off().on('change', OnFileInputChanged);
     self.ui.remoteCheckbox.off().on('change', ToggleWorkHoursField);
+    self.ui.workTypeCheckboxes.on('change', SetWorkTypes);
     self.ui.dobInput.off().on('change', SetDob);
   }
 

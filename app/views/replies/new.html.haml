@@ -52,9 +52,9 @@
       = label_tag :salary
       = f.text_field :salary, placeholder: t('vacancies.reply.placeholders.salary')
       = f.hidden_field :work_types
-      = check_box_tag :work_type_office, value: 'office', class: 'work-type-option'
+      = check_box_tag :work_type_office, 'office', false, class: 'work-type-option'
       = label_tag :work_type_office, t('vacancies.reply.cooperation.types.office')
-      = check_box_tag :work_type_remote, value: 'remote', class: 'work-type-option-remote'
+      = check_box_tag :work_type_remote, 'remote', false, class: 'work-type-option work-type-option-remote'
       = label_tag :work_type_remote, t('vacancies.reply.cooperation.types.remote')
       %br
       = label_tag :work_hours

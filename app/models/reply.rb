@@ -47,7 +47,7 @@ class Reply < ActiveRecord::Base
   end
 
   def dob= value
-    super value.to_date
+    super Date.strptime(value, "%m/%d/%Y") if value.present?
   end
 
   def validate_cv_size
@@ -65,6 +65,7 @@ class Reply < ActiveRecord::Base
   end
 
   def work_types= value
+    value = (JSON.parse value).map &:to_sym
     result = '0' * 2**(WORK_TYPES.count - 1)
     value.each {|type| result[Hash[WORK_TYPES.map.with_index.to_a][type]] = '1' }
     super result.to_i 2
