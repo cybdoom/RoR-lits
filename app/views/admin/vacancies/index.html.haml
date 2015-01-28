@@ -1,9 +1,10 @@
 .vacancies
   .control-panel
-    .control-button
+    .control-panel-cell.add-button
       = link_to new_admin_vacancy_path do
         = fa_icon 'plus'
-      - if current_user.is_admin?
+    - if current_user.is_admin?
+      .control-panel-cell.filter-area
         = t 'vacancies.index.filter'
         = select_tag :user_filter, select_options_user_filter
 
