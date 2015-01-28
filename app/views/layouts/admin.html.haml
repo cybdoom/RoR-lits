@@ -34,10 +34,10 @@
                       %a{:href => "/admin/vacancies" } Vacancies
                     %li
                       %a{:href => "/admin/pages"} Pages
+                    %li.logout-button
+                      = link_to(logout_path, method: :delete) do
+                        = fa_icon 'times', title: 'Logout'
                 / end menu
-                .logout-button
-                  = link_to(logout_path, method: :delete) do
-                    = fa_icon 'sign-out', title: 'Logout'
       .container
         .flash-area
           - if flash[:error].present?
