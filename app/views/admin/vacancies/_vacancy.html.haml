@@ -1,21 +1,4 @@
 .vacancy
-  .head
-    = fa_icon 'clock-o' if vacancy.frozen?
-    .name{ title: t('vacancies.vacancy.titles.name') }
-      = vacancy.name
-    .salary{ title: t('vacancies.vacancy.titles.salary') }
-      %div
-        = fa_icon 'money'
-        %div
-          = vacancy.salary || t('vacancies.vacancy.salary.none')
-    .owner{ title: t('vacancies.vacancy.titles.owner') }
-      %div
-        = fa_icon 'user'
-        %div
-          = vacancy.user.present? ? vacancy.user.name : t('vacancies.vacancy.user.none')
-  .details{ title: t('vacancies.vacancy.titles.details') }
-    = vacancy.description.html_safe
-
   .actions-panel
     .action.replies{ title: t('vacancies.vacancy.actions.replies') }
       = link_to admin_replies_path(vacancy_id: vacancy.id) do
@@ -32,3 +15,20 @@
     .action.delete{ title: t('vacancies.vacancy.actions.delete') }
       = link_to(admin_vacancy_path(vacancy), method: :delete) do
         = fa_icon 'trash'
+  .vacancy-content
+    .head
+      = fa_icon 'clock-o' if vacancy.frozen?
+      .name{ title: t('vacancies.vacancy.titles.name') }
+        = vacancy.name
+      .salary{ title: t('vacancies.vacancy.titles.salary') }
+        %div
+          = fa_icon 'money'
+          %div
+            = vacancy.salary || t('vacancies.vacancy.salary.none')
+      .owner{ title: t('vacancies.vacancy.titles.owner') }
+        %div
+          = fa_icon 'user'
+          %div
+            = vacancy.user.present? ? vacancy.user.name : t('vacancies.vacancy.user.none')
+    .details{ title: t('vacancies.vacancy.titles.details') }
+      = vacancy.description.html_safe

@@ -22,5 +22,10 @@ function Vacancy(html) {
     self.ui.head.off().on('click', ToggleDetails);
   }
 
+  function InitializeUI() {
+    self.ui.actions.hide();
+  }
+
   SetEventHandlers();
+  InitializeUI();
 }
