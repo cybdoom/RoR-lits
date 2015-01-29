@@ -1,9 +1,10 @@
 deploy_to    =  "/var/www/devlits.com/devlits.com/docroot"
 rails_root   =  "#{deploy_to}/current"
-pid_file     =  "#{rails_root}/tmp/pids/unicorn.pid"
-socket_file  =  "#{rails_root}/tmp/sockets/unicorn.sock"
-log_file     =  "#{rails_root}/log/unicorn.log"
-err_log      =  "#{rails_root}/log/unicorn_error.log"
+shared_dir   =  "#{deploy_to}/shared"
+pid_file     =  "#{shared_dir}/pids/unicorn.pid"
+socket_file  =  "#{shared_dir}/sockets/unicorn.sock"
+log_file     =  "#{shared_dir}/logs/unicorn.log"
+err_log      =  "#{shared_dir}/log/unicorn_error.log"
 old_pid      =  pid_file + '.oldbin'
 
 timeout 30
