@@ -75,7 +75,12 @@ function Reply(html) {
     self.ui.dobInput.off().on('change', SetDob);
   }
 
+  function InitializeUI() {
+    self.ui.workTypesHiddenInput.attr('value', '[]');
+  }
+
   SetEventHandlers();
+  InitializeUI();
 }
 
 $(function() {

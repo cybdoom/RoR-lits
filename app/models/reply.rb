@@ -61,6 +61,7 @@ class Reply < ActiveRecord::Base
       result << WORK_TYPES[i] if presence == '1'
       i += 1
     end
+    p result
     result
   end
 
