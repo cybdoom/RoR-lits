@@ -1,15 +1,16 @@
 .vacancy.for-candidate
-  .head
-    .name{ title: t('vacancies.vacancy.titles.name') }
-      = vacancy.name
-    .salary{ title: t('vacancies.vacancy.titles.salary') }
-      %div
-        = fa_icon 'money'
+  .vacancy-content
+    .head
+      .name{ title: t('vacancies.vacancy.titles.name') }
+        = vacancy.name
+      .salary{ title: t('vacancies.vacancy.titles.salary') }
         %div
-          = vacancy.salary || t('vacancies.vacancy.salary.none')
-  .details{ title: t('vacancies.vacancy.titles.details') }
-    = vacancy.description.html_safe
-    .reply-vacancy{ title: t('vacancies.vacancy.titles.reply') }
-      = link_to new_reply_path(vacancy_id: vacancy.id) do
-        = fa_icon 'reply'
-        = t('vacancies.reply.link')
+          = fa_icon 'money'
+          %div
+            = vacancy.salary || t('vacancies.vacancy.salary.none')
+    .details{ title: t('vacancies.vacancy.titles.details') }
+      = vacancy.description.html_safe
+      .reply-vacancy{ title: t('vacancies.vacancy.titles.reply') }
+        = link_to new_reply_path(vacancy_id: vacancy.id) do
+          = fa_icon 'reply'
+          = t('vacancies.reply.link')
