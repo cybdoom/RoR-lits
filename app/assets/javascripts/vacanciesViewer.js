@@ -7,6 +7,11 @@ function VacanciesViewer(html) {
   };
 
   function FilterByUser(userId) {
+    if (userId == '0') {
+      window.location.href = 'vacancies';
+      return;
+    }
+
     var oldUrl = window.location.href;
     if (!/\?/.test(oldUrl)) oldUrl += '?';
     var filterString = 'user_filter=' + userId,

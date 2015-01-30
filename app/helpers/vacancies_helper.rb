@@ -1,6 +1,6 @@
 module VacanciesHelper
   def select_options_owner
-    User.where(role: Hash[User::ROLES.map.with_index.to_a][:hr]).map { |user| [user.name, user.id] }
+    (User.hrs + User.admins).map { |user| [user.name, user.id] }
   end
 
   def select_options_spoken_english
@@ -12,7 +12,7 @@ module VacanciesHelper
   end
 
   def select_options_user_filter
-    options = (User.hrs + User.admins).map { |user| [user.name, user.id] }
+    options = [['All', 0]] + (User.hrs + User.admins).map { |user| [user.name, user.id] }
     options_for_select options, params[:user_filter].present? ? params[:user_filter] : options[0][0]
   end
 
