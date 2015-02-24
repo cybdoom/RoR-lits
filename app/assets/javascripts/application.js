@@ -16,6 +16,5 @@
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree ./application
-//= require vacancy
 
 //= require ckeditor/init

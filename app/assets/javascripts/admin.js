@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree ./admin
-//= require vacancy
 
 //= require ckeditor/init
