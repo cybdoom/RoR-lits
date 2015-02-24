@@ -1,7 +1,7 @@
 deploy_to    =  "/home/rails"
 rails_root   =  "#{deploy_to}/current"
 shared_dir   =  "#{deploy_to}/shared"
-pid_file     =  "#{shared_dir}/pids/unicorn.pid"
+pid_file     =  "#{rails_root}/tmp/pids/unicorn.pid"
 socket_file  =  "#{shared_dir}/sockets/unicorn.sock"
 log_file     =  "#{shared_dir}/logs/unicorn.log"
 err_log      =  "#{shared_dir}/logs/unicorn_error.log"
