@@ -11,6 +11,7 @@ set :repo_url, 'https://github.com/cybdoom/lits.git'
 set :deploy_to, '/home/rails/'
 set :branch, :master
 set :deploy_via, :remote_cache
+set :unicorn_pid, 'home/rails/shared/pids/unicorn.pid'
 
 
 # Extended Server Syntax
