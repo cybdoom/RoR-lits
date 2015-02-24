@@ -47,6 +47,7 @@ Lits::Application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
+  config.logger.level = Logger.const_get 'DEBUG'
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
