@@ -47,7 +47,6 @@ Lits::Application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.logger.level = Logger.const_get 'DEBUG'
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
@@ -67,9 +66,19 @@ Lits::Application.configure do
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w( admin.js admin.css vacancy.js vacanciesViewer.js application/reply.js contactsViewer.js )
 
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host => "logic-it-solutions.com" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "lits.mailer@gmail.com",
+    :password             => 'lits123!@#',
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
