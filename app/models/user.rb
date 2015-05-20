@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
 
   ROLES.each do |role|
     scope role.to_s + 's', ->() do
-      role_i = ROLES.map.with_index.to_h[role]
+      role_i = 0
+      loop do
+        break if ROLES[role_i] == role
+        role_i++
+      end
       where(role: role_i)
     end
   end
